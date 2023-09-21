@@ -7,18 +7,14 @@ config({ path: './.env' });
 
 
 const app = express()
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 7777
 
 
-app.use(cors)
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-)
-
+app.use(cors())
+app.use(express.json())
 initRoutes(app)
-init_db()
+
+
 
 app.listen(PORT, (err) => {
   if (err) console.log(err);
@@ -26,4 +22,7 @@ app.listen(PORT, (err) => {
     `Server is listening at: ${PORT} - Click Here => http://localhost:${PORT}`
   );
 });
+
+
+init_db()
 

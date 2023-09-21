@@ -2,11 +2,14 @@ import { guardarUsuario, mostrarUsuarios, verificarCorreo, buscarUsuario  } from
 
 export async function ingreso(req, res) {
     const {email,password} = req.body;
-    let user = {email: email}
+    console.log("Intenta ingresar un user");
+
     if(email == null || password == null){
         return res.status(401).json({
             massage: "Datos no ingresados"
         });
     }
+
+    
 }
 
