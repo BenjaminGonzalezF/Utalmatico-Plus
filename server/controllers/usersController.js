@@ -8,7 +8,7 @@ const guardarUsuario = (nuevoUsuario) => {
         Contrasena: nuevoUsuario.contrasena,
     });
     user.save();
-    console.log("Usuario guardado"); 
+    console.log("Usuario guardado: " + user); 
 };
 
 const mostrarUsuarios = () => { 

@@ -1,27 +1,39 @@
-import { guardarUsuario } from '../controllers/usersController.js';
+import { guardarUsuario, buscarUsuario } from '../controllers/usersController.js';
 
 
 export async function ingreso(req, res) {
-    const { email, password } = req.body;
-    console.log(req.body);
-    console.log("Intenta ingresar un user");
-    
-    if (email == null || password == null) {
+    const { email, contrasena } = req.body;
+
+    const user = {
+        email: email,
+        contrasena: contrasena
+    };
+
+    if (email == null || contrasena == null) {
         return res.status(401).json({
             massage: "Datos no ingresados"
         });
     }
+    const result = await buscarUsuario(user)
+    
+    if(result){
+        console.log("Ingresando");
 
-    res.status(200).json({
-        massage: "Datos Enviados a la BD"
+        return res.status(200).json({
+            massage: "Ingresado"
+        });
+    }
+    return res.status(417).json({
+        massage: "Usuario incorrecto"
     });
+        
 }
 
     export async function registrarUsuario(req, res) {
         const { nombre, apellido, email, contrasena } = req.body;
         if (nombre == null || apellido == null || email == null || contrasena == null) {
             return res.status(401).json({
-                massage: "Datos no ingresados"
+                massage: "Datos faltantes"
             });
         }
 
