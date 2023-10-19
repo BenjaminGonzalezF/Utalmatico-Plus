@@ -1,65 +1,82 @@
-import React from 'react';
-import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-  MDBInput
-}
-from 'mdb-react-ui-kit';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+const Login = () => {
+  const [correo, setCorreo] = useState('');
+  const [clave, setClave] = useState('');
+  const [error, setError] = useState(''); // Estado para el mensaje de error
+  const navigate = useNavigate(); 
 
-function Login() {
+
+  const handleCorreoChange = (event) => {
+    setCorreo(event.target.value);
+  };
+
+  const handleClaveChange = (event) => {
+    setClave(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3001/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ correo, clave }),
+      });
+
+      if (response.ok) {
+        console.log('Inicio de sesión exitoso');
+        handleLogin();
+      } else {
+        console.error('Inicio de sesión fallido');
+        setError('Usuario o contraseña incorrectos'); // Establece el mensaje de error
+      }
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+    }
+  };
+
+  const irAPestañaInicial = () => {
+    navigate('/pestañaInicial');
+  };
+
+  const handleLogin = () => {
+    navigate('/inicio');
+  };
+
+  const fondo = "my-div bg-gray-100 flex flex-col justify-center items-center h-screen ";
+  const formatoLabel = "px-1 text-sm text-gray-600";
+  const formatoInput= "text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none";
+
   return (
-    <MDBContainer fluid>
-      <MDBRow>
-
-        <MDBCol sm='6'>
-          <div className='d-flex flex-row ps-5 pt-5'>
-            <MDBIcon fas icon="crow fa-3x me-3" style={{ color: '#709085' }}/>
-            <span className="h1 fw-bold mb-0">Logo</span>
+    <div className={fondo}>
+      <form className="p-12 md:p-20 bg-white shadow-md rounded-3xl" onSubmit={handleSubmit}>
+        <div className="flex justify-center">
+          <h6 className="text-3xl font-bold">
+            Bienvenido
+          </h6>
+        </div>
+        <div className="m-2 p-1">
+          <label className={formatoLabel}>Ingrese su correo</label>
+          <input type="text" id="correo" className={formatoInput} value={correo} onChange={handleCorreoChange} placeholder="Usuario" />
+        </div>
+        <div className="flex flex-col m-2 p-1">
+          <label className={formatoLabel}>Contraseña</label>
+          <input type="password" id="clave" className={formatoInput} value={clave} onChange={handleClaveChange} placeholder="Contraseña" />
+          <p className="text-red-500">{error}</p> {/* Muestra el mensaje de error */}
+          <div className="flex justify-end my-4">
+          <button className="mt-3 text-lg font-semibold
+            bg-gray-800 w-full text-white rounded-lg
+            px-6 py-3 block shadow-xl hover:text-white hover:bg-black" onClick={irAPestañaInicial}>
+            Iniciar Sesión
+          </button>
           </div>
-
-          <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
-
-            <h3 className="fw-normal mb-3 ps-5 pb-3" style={{letterSpacing: '1px'}}>Log in</h3>
-
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
-            <MDBInput wrapperClass='mb-4 mx-5 w-100' label='Password' id='formControlLg' type='password' size="lg"/>
-
-            <MDBBtn className="mb-4 px-5 mx-5 w-100" color='info' size='lg'>Login</MDBBtn>
-            <p className="small mb-5 pb-lg-3 ms-5"><a class="text-muted" href="#!">Forgot password?</a></p>
-            <p className='ms-5'>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
-
-          </div>
-
-        </MDBCol>
-
-        <MDBCol sm='6' className='d-none d-sm-block px-0'>
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
-            alt="Login image" className="w-100" style={{objectFit: 'cover', objectPosition: 'left'}} />
-        </MDBCol>
-
-      </MDBRow>
-
-    </MDBContainer>
+        </div>
+      </form>
+    </div>
   );
-}
+};
 
 export default Login;
-
-
-
-const [userInfo, setUserInfo] = useState({})
-
-useEffect(()=>{
-     fetch('http://localhost:3000/login', requestOptions)
-            .then(response => response.json())
-            .then(result => setUserInfo(result));
-},[])
-
-console.log("Valor de estado actual userInfo:", userInfo )
-
-return null;

@@ -1,15 +1,19 @@
-import { guardarUsuario, buscarUsuario } from '../controllers/usersController.js';
+import e from 'cors';
+import { guardarUsuario, buscarUsuario, mostrarUsuarios} from '../controllers/usersController.js';
 
 
 export async function ingreso(req, res) {
-    const { email, contrasena } = req.body;
-
+    const { correo, clave } = req.body;
     const user = {
-        email: email,
-        contrasena: contrasena
+        correo: correo,
+        clave: clave
     };
+    console.log(req.body)
+    console.log(correo , clave)
 
-    if (email == null || contrasena == null) {
+
+
+    if (correo == null || clave == null) {
         return res.status(401).json({
             massage: "Datos no ingresados"
         });
@@ -25,26 +29,39 @@ export async function ingreso(req, res) {
     }
     return res.status(417).json({
         massage: "Usuario incorrecto"
-    });
-        
+    });       
 }
 
-    export async function registrarUsuario(req, res) {
-        const { nombre, apellido, email, contrasena } = req.body;
-        if (nombre == null || apellido == null || email == null || contrasena == null) {
-            return res.status(401).json({
-                massage: "Datos faltantes"
-            });
-        }
-
-        const user = {
-            nombre: nombre,
-            apellido: apellido,
-            email: email,
-            contrasena: contrasena
-        };
-        const result = await guardarUsuario(user);
-        res.status(200).json({
-            massage: "Datos Enviados a la BD"
+export async function registrarUsuario(req, res) {
+    const { nombre, apellido, email, contrasena } = req.body;
+    if (nombre == null || apellido == null || email == null || contrasena == null) {
+        return res.status(401).json({
+            massage: "Datos faltantes"
         });
     }
+    const user = {
+        nombre: nombre,
+        apellido: apellido,
+        email: email,
+        contrasena: contrasena
+    };
+    const result = await guardarUsuario(user);
+    res.status(200).json({
+        massage: "Datos Enviados a la BD"
+    });
+}
+    export async function obtenerUsuarios(req, res) {
+        const result = await mostrarUsuarios();
+        if(result){
+            res.status(200).json({
+                result
+            })
+        }
+        return res.status(417).json({
+            massage: "Error al soliciatar los datos"
+        });
+    }
+
+
+
+

@@ -11,15 +11,16 @@ const guardarUsuario = (nuevoUsuario) => {
     console.log("Usuario guardado: " + user); 
 };
 
-const mostrarUsuarios = () => { 
-    usuario.find({}, (err, Usuarios) => { 
-        if (err) {
-            console.log('Error al mostrar los usuarios'); 
-        } else {
-            console.log(Usuarios); 
-        }
-    });
-};
+async function mostrarUsuarios() {
+    try {
+      const usuarios = await usuario.find({}); // Consulta todos los documentos en la colección de usuarios
+      console.log(usuarios); // Imprime los usuarios en la consola
+      return usuarios;
+    } catch (error) {
+      console.error('Error al obtener usuarios:', error);
+      return false
+    }
+  }
 
 async function verificarCorreo(nuevoUsuario) { 
     let correo = nuevoUsuario.email; 
@@ -35,7 +36,7 @@ async function verificarCorreo(nuevoUsuario) {
 async function buscarUsuario(nuevoUsuario) {
     let correo = nuevoUsuario.email; 
     let contrasena = nuevoUsuario.contrasena; 
-    let user = await usuario.findOne({ Email: correo, Contrasena: contrasena }); 
+    let user = await usuario.findOne({ Correo: correo, Clave: contrasena }); 
     if (user) {
         console.log("Usuario encontrado"); 
         return true;
@@ -43,4 +44,4 @@ async function buscarUsuario(nuevoUsuario) {
     return false;
 }
 
-export { guardarUsuario, mostrarUsuarios, verificarCorreo, buscarUsuario }; 
+export { guardarUsuario, mostrarUsuarios, verificarCorreo, buscarUsuario}; 
