@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import perfil from '../assets/imagenes/perfil.jpg'
 import { useNavigate } from 'react-router-dom';
+import Mensajes from './Mensajes';
 
 const PestañaInicial = () => {
     const navigate = useNavigate();
+    const [showChat, setShowChat] = useState(false);
 
 
   const handlePestañaInicial = () => {
@@ -17,6 +19,7 @@ const PestañaInicial = () => {
   const irAPestañaLogin = () => {
     navigate('/');
   };
+
 
   const estiloRecuadro = "p-12 md:p-20 bg-white shadow-md rounded-3xl"; // Estilo original
   const estiloPosicion = "absolute top-10 right-10"; // Cambiamos "left" por "right"
@@ -70,7 +73,7 @@ const PestañaInicial = () => {
         <button
             className="mt-3 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg
-            px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
+            px-6 py-3 block shadow-xl hover:text-white hover:bg-black" onClick={() => setShowChat(true)}
             style={{
             fontSize: '15px', 
             width: '180px',   // Cambia el ancho del botón
@@ -142,6 +145,7 @@ const PestañaInicial = () => {
             />
           </div>
         </div>
+        {showChat && <Mensajes onClose={() => setShowChat(false)} />}
     </div>
     </>
   )
