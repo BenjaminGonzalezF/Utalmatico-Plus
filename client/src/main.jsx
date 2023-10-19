@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Login from './components/Login.jsx' 
 import PestañaInicial from './components/pestañaInicial.jsx'
+import Horario from './components/Horario.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import PestañaModulo from './components/PestañaModulo.jsx'
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
 {
   path: '/pestañaModulo', 
   element: <PestañaModulo/>,
+},
+{
+  path: '/horario', 
+  element: <Horario/>,
 }
 ]);
 
