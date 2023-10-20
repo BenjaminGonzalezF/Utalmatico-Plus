@@ -10,6 +10,7 @@ import Mensajes from './components/Mensajes.jsx'
 import GeneracionCartaModulos from './components/GeneracionCartaModulos.jsx'
 import VistaModulo from './components/VistaModulo.jsx'
 import Calendario from './components/Calendario.jsx'
+import BotonesFiltrado from './components/BotonesFiltrado.jsx'
 
 
 const router = createBrowserRouter([
@@ -44,7 +45,12 @@ const router = createBrowserRouter([
 {
   path: '/calendario', 
   element: <Calendario/>,
+},
+{
+  path: '/botonesFiltrado', 
+  element: <BotonesFiltrado/>,
 }
+
 ]);
 
 

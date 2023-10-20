@@ -7,6 +7,7 @@ import './Pestañainicial.css';
 import Mensajes from './Mensajes';
 import BotonesPrincipales from './BotonesPrincipales';
 import Usuario from './Usuario';
+import BotonesFiltrado from './BotonesFiltrado';
 
 const PestañaInicial = () => {
     const navigate = useNavigate();
@@ -38,7 +39,7 @@ const PestañaInicial = () => {
         <div class="Usuario                      "><Usuario/></div>
         <div class="Botones-Principales         "><BotonesPrincipales/></div>
         <div class="Mostrar-Ramis               "><GeneracionCartaModulos/></div>
-        <div class="Botones-Filtradores         ">Botones Filtrados </div>
+        <div class="Botones-Filtradores         "><BotonesFiltrado/></div>
       </div>
 
 

@@ -43,7 +43,7 @@ const BotonesPrincipales = () => {
             height: '60px',    // Cambia la altura del botón
             position: 'absolute', // Cambia la posición a absoluta
             top: '50px',      // Cambia la distancia desde la parte superior
-            left: '90px'       // Cambia la distancia desde la izquierda
+            left: '250px'       // Cambia la distancia desde la izquierda
             }}>
             Horario
         </button>
@@ -57,7 +57,7 @@ const BotonesPrincipales = () => {
             height: '60px',    // Cambia la altura del botón
             position: 'absolute', // Cambia la posición a absoluta
             top: '50px',      // Cambia la distancia desde la parte superior
-            left: '300px'       // Cambia la distancia desde la izquierda
+            left: '450px'       // Cambia la distancia desde la izquierda
             }}>
             Avance académico
         </button>
@@ -71,7 +71,7 @@ const BotonesPrincipales = () => {
             height: '60px',    // Cambia la altura del botón
             position: 'absolute', // Cambia la posición a absoluta
             top: '50px',      // Cambia la distancia desde la parte superior
-            left: '510px'       // Cambia la distancia desde la izquierda
+            left: '650px'       // Cambia la distancia desde la izquierda
             }}>
             Documentos
         </button>
@@ -85,7 +85,7 @@ const BotonesPrincipales = () => {
             height: '60px',    // Cambia la altura del botón
             position: 'absolute', // Cambia la posición a absoluta
             top: '50px',      // Cambia la distancia desde la parte superior
-            left: '720px'       // Cambia la distancia desde la izquierda
+            left: '850px'       // Cambia la distancia desde la izquierda
             }}>
             Mensajes
         </button>
