@@ -32,13 +32,13 @@ const PestañaInicial = () => {
 
   return (
     <>
-    <div class="contenedorInicial">
-        <div class="Calendario          bg-red-500           "><Calendario/></div>
-        <div class="Pendientes          bg-orange-500        ">Pendientes</div>
-        <div class="Usuario             bg-green-500         "><Usuario/></div>
-        <div class="Botones-Principales bg-yellow-500        "><BotonesPrincipales/></div>
-        <div class="Mostrar-Ramis       bg-teal-500        "><GeneracionCartaModulos/></div>
-        <div class="Botones-Filtradores bg-indigo-500        ">Botones Filtrados </div>
+    <div class="contenedorInicial bg-indigo-400">
+        <div class="Calendario                     "><Calendario/></div>
+        <div class="Pendientes                  ">Pendientes</div>
+        <div class="Usuario                      "><Usuario/></div>
+        <div class="Botones-Principales         "><BotonesPrincipales/></div>
+        <div class="Mostrar-Ramis               "><GeneracionCartaModulos/></div>
+        <div class="Botones-Filtradores         ">Botones Filtrados </div>
       </div>
 
 
