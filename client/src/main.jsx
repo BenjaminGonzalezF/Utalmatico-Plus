@@ -5,6 +5,8 @@ import Login from './components/Login.jsx'
 import PestañaInicial from './components/pestañaInicial.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import PestañaModulo from './components/PestañaModulo.jsx'
+import GeneracionCartaModulos from './components/GeneracionCartaModulos.jsx'
+import VistaModulo from './components/VistaModulo.jsx'
 
 const router = createBrowserRouter([
 {
@@ -13,7 +15,7 @@ const router = createBrowserRouter([
 },
 {
   path: '/inicio', 
-  element: <App/>,
+  element: <GeneracionCartaModulos/>,
 },
 {
   path: '/pestañaInicial', 
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
 {
   path: '/pestañaModulo', 
   element: <PestañaModulo/>,
+},
+{
+  path: '/modulo', 
+  element: <VistaModulo/>,
 }
 ]);
 
