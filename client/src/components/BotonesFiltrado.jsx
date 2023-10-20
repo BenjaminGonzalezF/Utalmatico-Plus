@@ -38,7 +38,7 @@ const BotonesFiltrado = () => {
   };
 
   return (
-    <div className="flex-auto flex flex-row items-center h-64">
+    <div className="flex-auto flex flex-row items-center ">
       <div className="relative bg-gray-800 p-1 flex border border-gray-800 rounded-md" style={{ marginRight: '40px' }}> {/* Add margin for separation */}
           <div className="flex flex-auto flex-wrap">
             <span className="mr-1 text-white">Ver módulos:</span>
