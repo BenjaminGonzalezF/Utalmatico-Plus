@@ -32,16 +32,31 @@ async function verificarCorreo(nuevoUsuario) {
     }
     return true;
 }
+async function  buscarUsuario(nuevoUsuario) {
 
-async function buscarUsuario(nuevoUsuario) {
-    let correo = nuevoUsuario.email; 
-    let contrasena = nuevoUsuario.contrasena; 
-    let user = await usuario.findOne({ Correo: correo, Clave: contrasena }); 
-    if (user) {
-        console.log("Usuario encontrado"); 
-        return true;
+    const correo = nuevoUsuario.correo;
+    const clave = nuevoUsuario.clave;
+  
+    console.log("Buscando a " , correo, clave);
+  
+    try {
+      const usuarioEncontrado = await usuario.findOne({ correo: correo, clave: clave });
+
+      if (usuarioEncontrado) {
+        if(usuarioEncontrado.voto == 0){
+            console.log('Usuario encontrado:', usuarioEncontrado);
+            return true;
+            }
+        console.log('Usuario ya voto:', usuarioEncontrado);
+        return false
+      } else {
+        console.log('No se encontró ningún usuario con ese nombre y contraseña');
+        return false;
+      }
+    } catch (error) {
+      console.error('Ocurrió un error al buscar el usuario:', error);
+      return false;
     }
-    return false;
-}
+}  
 
 export { guardarUsuario, mostrarUsuarios, verificarCorreo, buscarUsuario}; 
