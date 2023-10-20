@@ -8,28 +8,23 @@ export async function ingreso(req, res) {
         correo: correo,
         clave: clave
     };
-    console.log(req.body)
-    console.log(correo , clave)
 
-
-
-    if (correo == null || clave == null) {
+    if (correo == "" || clave == "") {
+        console.log("Datos no ingresados")
         return res.status(401).json({
             massage: "Datos no ingresados"
         });
     }
-    const result = await buscarUsuario(user)
-    
-    if(result){
-        console.log("Ingresando");
-
-        return res.status(200).json({
-            massage: "Ingresado"
-        });
-    }
-    return res.status(417).json({
-        massage: "Usuario incorrecto"
-    });       
+    const result = await buscarUsuario(user);
+    if (result) {
+      return res.status(200).json({
+        message: "Usuario encontrado"
+      });
+    } else {
+      return res.status(417).json({
+        message: "Usuario no encontrado"
+      });
+    } 
 }
 
 export async function registrarUsuario(req, res) {
