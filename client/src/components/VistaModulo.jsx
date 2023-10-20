@@ -4,7 +4,7 @@ import './CssPestañaModulo.css';
 export default function VistaModulo({nombre}) {
   return (
     <>
-        <div class="container">
+        <div class="containeruwu">
           <div class="botones           bg-red-500   ">  Botones </div>
           <div class="filtros           bg-yellow-500        ">  Filtros </div>
           <div class="Laterales          bg-teal-500       ">  Botones lateriales </div>
