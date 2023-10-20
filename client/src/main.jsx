@@ -2,11 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Login from './components/Login.jsx' 
-import PestañaInicial from './components/pestañaInicial.jsx'
+import PestañaInicial from './components/PestañaInicial.jsx'
 import Horario from './components/Horario.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import PestañaModulo from './components/PestañaModulo.jsx'
 import Mensajes from './components/Mensajes.jsx'
+import GeneracionCartaModulos from './components/GeneracionCartaModulos.jsx'
+import VistaModulo from './components/VistaModulo.jsx'
+import Calendario from './components/Calendario.jsx'
 
 
 const router = createBrowserRouter([
@@ -16,7 +19,7 @@ const router = createBrowserRouter([
 },
 {
   path: '/inicio', 
-  element: <App/>,
+  element: <GeneracionCartaModulos/>,
 },
 {
   path: '/pestañaInicial', 
@@ -27,12 +30,20 @@ const router = createBrowserRouter([
   element: <PestañaModulo/>,
 },
 {
+  path: '/modulo', 
+  element: <VistaModulo/>,
+},
+{
   path: '/horario', 
   element: <Horario/>,
 },
 {
   path: '/mensajes', 
   element: <Mensajes/>,
+},
+{
+  path: '/calendario', 
+  element: <Calendario/>,
 }
 ]);
 

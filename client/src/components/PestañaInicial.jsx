@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import perfil from '../assets/imagenes/perfil.jpg'
 import { useNavigate } from 'react-router-dom';
+import GeneracionCartaModulos from './GeneracionCartaModulos';
+import Calendario from './Calendario';
+import './Pestañainicial.css';
 import Mensajes from './Mensajes';
 
 const PestañaInicial = () => {
@@ -27,6 +30,16 @@ const PestañaInicial = () => {
 
   return (
     <>
+    <div class="contenedorInicial">
+        <div class="Calendario          bg-red-500           "><Calendario/></div>
+        <div class="Pendientes          bg-orange-500        ">Pendientes</div>
+        <div class="Usuario             bg-green-500         ">Usuario</div>
+        <div class="Botones-Principales bg-yellow-500        ">Botones principalesx</div>
+        <div class="Mostrar-Ramis       bg-teal-500        "><GeneracionCartaModulos/></div>
+        <div class="Botones-Filtradores bg-indigo-500        ">Botones Filtrados </div>
+      </div>
+
+
     <div>
         <button
             className="mt-3 text-lg font-semibold

@@ -1,0 +1,34 @@
+
+.contenedorInicial {
+    display: grid; 
+    width: 100vw; height: 100vh;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0ddpx 0px; 
+    grid-template-areas: 
+      "Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Usuario Usuario Usuario"
+      "Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Usuario Usuario Usuario"
+      "Calendario Calendario Calendario Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Usuario Usuario Usuario"
+      "Calendario Calendario Calendario Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Usuario Usuario Usuario"
+      "Calendario Calendario Calendario Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"
+      "Calendario Calendario Calendario Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"
+      "Calendario Calendario Calendario Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"
+      "Calendario Calendario Calendario Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"
+      "Pendientes Pendientes Pendientes Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"
+      "Pendientes Pendientes Pendientes Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"
+      "Pendientes Pendientes Pendientes Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"
+      "Pendientes Pendientes Pendientes Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"
+      "Pendientes Pendientes Pendientes Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"; 
+  }
+.Calendario { grid-area: Calendario; }
+.Pendientes { grid-area: Pendientes; }
+.Usuario { grid-area: Usuario; }
+.Botones-Principales { grid-area: Botones-Principales; }
+.Mostrar-Ramis { grid-area: Mostrar-Ramis; }
+.Botones-Filtradores { grid-area: Botones-Filtradores; }
+
+
+.expandir{
+  width: 100vw; height: 100vh;
+}
