@@ -1,6 +1,6 @@
 export default function Calendario() {
     return (
-        <div class="flex items-center justify-center py-8 px-4">        
+        <div class="flex items-center justify-center">        
                     <div class="max-w-sm w-full shadow-lg">
                         <div class="md:p-8 p-5 dark:bg-gray-500 bg-black rounded-t">
                             <div class="px-4 flex items-center justify-between">
