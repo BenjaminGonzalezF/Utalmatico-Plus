@@ -90,7 +90,7 @@ const BotonesPrincipales = () => {
             Mensajes
         </button>
     
-        
+        {showChat && <Mensajes onClose={() => setShowChat(false)} />}
     </div>
     </>
   )
