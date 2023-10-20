@@ -11,7 +11,7 @@ const PestañaModulo = () => {
   return (
     <>
     <h1>
-        <div class="container">
+        <div class="contenedorInicial">
           <div class="botones           bg-red-500   ">  Botones </div>
           <div class="filtros           bg-yellow-500        ">  Filtros </div>
           <div class="Laterales          bg-teal-500       ">  Botones lateriales </div>
