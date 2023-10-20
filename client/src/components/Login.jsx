@@ -43,7 +43,7 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    navigate('/inicio');
+    navigate('/pestañaInicial');
   };
 
   const fondo = "my-div bg-gray-100 flex flex-col justify-center items-center h-screen ";
@@ -69,7 +69,7 @@ const Login = () => {
           <div className="flex justify-end my-4">
           <button className="mt-3 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg
-            px-6 py-3 block shadow-xl hover:text-white hover:bg-black" onClick={irAPestañaInicial}>
+            px-6 py-3 block shadow-xl hover:text-white hover:bg-black">
             Iniciar Sesión
           </button>
           </div>
