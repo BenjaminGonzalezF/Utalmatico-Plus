@@ -27,3 +27,8 @@
 .Botones-Principales { grid-area: Botones-Principales; }
 .Mostrar-Ramis { grid-area: Mostrar-Ramis; }
 .Botones-Filtradores { grid-area: Botones-Filtradores; }
+
+
+.expandir{
+  width: 100vw; height: 100vh;
+}
