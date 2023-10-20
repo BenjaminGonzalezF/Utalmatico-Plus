@@ -26,29 +26,31 @@ const Usuario = () => {
 
 
   const estiloRecuadro = "p-12 md:p-20 bg-white shadow-md rounded-3xl"; // Estilo original
-  const estiloPosicion = "absolute top-10 right-10"; // Cambiamos "left" por "right"
+  const estiloPosicion = ""; // Cambiamos "left" por "right"
   
 
   return (
     <>
     
 
-    <div>
+    <div class = 'flex'>
         
-        <div className={`my-div `}>
+        <div className={`my-div`}>
           <div 
-              className={`${estiloRecuadro} ${estiloPosicion} flex flex-col items-center justify-center`}
+              className={`${estiloRecuadro} ${estiloPosicion} relative`}
               style={{
-                  width: '300px', // Cambia el ancho del recuadro
-                  height: '200px', // Cambia la altura del recuadro
+                  marginTop:'1vh',
+                  marginLeft:'1vh',
+                  width: '22vw', // Cambia el ancho del recuadro
+                  height: '27vh', // Cambia la altura del recuadro
               }}
             >
             <h6
               className="text-3xl font-bold"
               style={{
                 position: 'absolute',
-                top: '20px', // Cambia la distancia desde la parte superior
-                left: '50px', // Cambia la distancia desde la izquierda
+                top: '25px', // Cambia la distancia desde la parte superior
+                left: '30px', // Cambia la distancia desde la izquierda
               }}
             >
               Perfil
@@ -60,7 +62,7 @@ const Usuario = () => {
                 width: '120px', // Cambia el ancho del botón
                 height: '40px', // Cambia la altura del botón
                 position: 'absolute',
-                top: '80px',  // Cambia la distancia desde la parte superior
+                top: '60px',  // Cambia la distancia desde la parte superior
                 left: '30px', // Cambia la distancia desde la izquierda
                 textAlign: 'center', // Cambia la alineación horizontal (puede ser 'left', 'center', o 'right')
                 lineHeight: '10px',   // Ajusta el espaciado vertical según el alto del botón
@@ -75,7 +77,7 @@ const Usuario = () => {
                 width: '120px', // Cambia el ancho del botón
                 height: '40px', // Cambia la altura del botón
                 position: 'absolute',
-                top: '130px',  // Cambia la distancia desde la parte superior
+                top: '110px',  // Cambia la distancia desde la parte superior
                 left: '30px', // Cambia la distancia desde la izquierda
                 textAlign: 'center', // Cambia la alineación horizontal (puede ser 'left', 'center', o 'right')
                 lineHeight: '10px',   // Ajusta el espaciado vertical según el alto del botón

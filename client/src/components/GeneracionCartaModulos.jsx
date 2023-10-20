@@ -17,7 +17,7 @@ function GeneracionCartaModulos() {
 
   return (
     <div className="">
-        <div className='flex flex-wrap justify-content"'> 
+        <div className='flex flex-wrap'> 
         {candidatos.map((candidato, index) => (
           <CartaModulo
             key={index}
