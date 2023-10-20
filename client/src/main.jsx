@@ -9,6 +9,7 @@ import PestañaModulo from './components/PestañaModulo.jsx'
 import Mensajes from './components/Mensajes.jsx'
 import GeneracionCartaModulos from './components/GeneracionCartaModulos.jsx'
 import VistaModulo from './components/VistaModulo.jsx'
+import Calendario from './components/Calendario.jsx'
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
 {
   path: '/mensajes', 
   element: <Mensajes/>,
+},
+{
+  path: '/calendario', 
+  element: <Calendario/>,
 }
 ]);
 
