@@ -27,23 +27,23 @@ const BotonesPrincipales = () => {
   const estiloRecuadro = "p-12 md:p-20 bg-white shadow-md rounded-3xl"; // Estilo original
   const estiloPosicion = "absolute top-10 right-10"; // Cambiamos "left" por "right"
   
+  const botonprincipal = ""
 
   return (
     <>
 
 
-    <div>
+    <div class = "flex">
         <button
             className="mt-3 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black" onClick = {irAPestañaHorario}
             style = {{ 
-            fontSize: '15px', 
-            width: '180px',   // Cambia el ancho del botón
-            height: '60px',    // Cambia la altura del botón
-            position: 'absolute', // Cambia la posición a absoluta
-            top: '50px',      // Cambia la distancia desde la parte superior
-            left: '90px'       // Cambia la distancia desde la izquierda
+            fontSize: '2vh', 
+            width: '10vw',   
+            height: '10vh',
+            marginRight: '0.5vw',
+            marginLeft: '0.5vw',
             }}>
             Horario
         </button>
@@ -52,12 +52,11 @@ const BotonesPrincipales = () => {
             bg-gray-800 w-full text-white rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
             style={{
-            fontSize: '15px', 
-            width: '180px',   // Cambia el ancho del botón
-            height: '60px',    // Cambia la altura del botón
-            position: 'absolute', // Cambia la posición a absoluta
-            top: '50px',      // Cambia la distancia desde la parte superior
-            left: '300px'       // Cambia la distancia desde la izquierda
+              fontSize: '1.5vh', 
+              width: '10vw',   
+              height: '10vh',
+              marginRight: '0.5vw',
+              marginLeft: '0.5vw',
             }}>
             Avance académico
         </button>
@@ -66,12 +65,11 @@ const BotonesPrincipales = () => {
             bg-gray-800 w-full text-white rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
             style={{
-            fontSize: '15px', 
-            width: '180px',   // Cambia el ancho del botón
-            height: '60px',    // Cambia la altura del botón
-            position: 'absolute', // Cambia la posición a absoluta
-            top: '50px',      // Cambia la distancia desde la parte superior
-            left: '510px'       // Cambia la distancia desde la izquierda
+              fontSize: '2vh', 
+              width: '10vw',   
+              height: '10vh',
+              marginRight: '0.5vw',
+              marginLeft: '0.5vw',
             }}>
             Documentos
         </button>
@@ -80,12 +78,11 @@ const BotonesPrincipales = () => {
             bg-gray-800 w-full text-white rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black" onClick={() => setShowChat(true)}
             style={{
-            fontSize: '15px', 
-            width: '180px',   // Cambia el ancho del botón
-            height: '60px',    // Cambia la altura del botón
-            position: 'absolute', // Cambia la posición a absoluta
-            top: '50px',      // Cambia la distancia desde la parte superior
-            left: '720px'       // Cambia la distancia desde la izquierda
+              fontSize: '2vh', 
+              width: '10vw',   
+              height: '10vh',
+              marginRight: '0.5vw',
+              marginLeft: '0.5vw',
             }}>
             Mensajes
         </button>

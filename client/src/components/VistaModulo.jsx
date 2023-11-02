@@ -6,11 +6,11 @@ import './CssPestañaModulo.css';
 export default function VistaModulo({nombre}) {
   return (
     <>
-        <div class="containeruwu bg-indigo-400">
-          <div class="botones             "><BotonesModulos/> </div>
-          <div class="filtros                  "> <RenderBotonesUnidades/> </div>
-          <div class="Laterales                ">  Botones lateriales </div>
-          <div class="Interior-ramos           ">  Interior ramos</div>
+        <div class="containeruwu">
+          <div class="botones     bg-yellow-500          "><BotonesModulos/> </div>
+          <div class="filtros         bg-orange-500         "> <RenderBotonesUnidades/> </div>
+          <div class="Laterales       bg-green-500         ">  Botones lateriales </div>
+          <div class="Interior-ramos     bg-teal-500      ">  Interior ramos</div>
         </div>
     </>
   );
