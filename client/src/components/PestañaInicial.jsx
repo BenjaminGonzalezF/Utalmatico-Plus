@@ -20,7 +20,7 @@ const PestañaInicial = () => {
     <>
     <div class="contenedorInicial">
         <div class="Calendario          bg-red-500           "><Calendario/></div>
-        <div class="Semestre          bg-red-500           ">Semestre 1</div>
+        <div class="Semestre          bg-red-500           "></div>
         <div class="Pendientes      overflow-y-auto    bg-orange-500        "><Pendientes/></div>
         <div class="Usuario             bg-green-500         "><Usuario/></div>
         <div class="Botones-Principales bg-yellow-500        "><BotonesPrincipales/></div>

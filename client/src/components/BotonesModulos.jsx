@@ -13,6 +13,10 @@ const BotonesModulos = () => {
         navigate('/pestañaInicial');
       };
 
+      const irAEvaluacion = () => {
+        navigate('/añadirEvaluaciones');
+      };
+
     const toggleNotasPopup = () => {
         setIsNotasPopupOpen(!isNotasPopupOpen);
       };
@@ -94,6 +98,7 @@ const BotonesModulos = () => {
             Comunicación docente
         </button>
         <button
+            onClick={irAEvaluacion}
             className="mt-3 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
