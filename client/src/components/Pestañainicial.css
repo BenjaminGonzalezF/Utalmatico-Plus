@@ -7,8 +7,8 @@
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     gap: 0ddpx 0px; 
     grid-template-areas: 
-      "Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Usuario Usuario Usuario"
-      "Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Usuario Usuario Usuario"
+      "Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Semestre Semestre Semestre Semestre Usuario Usuario Usuario"
+      "Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Botones-Principales Semestre Semestre Semestre Semestre Usuario Usuario Usuario"
       "Calendario Calendario Calendario Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Usuario Usuario Usuario"
       "Calendario Calendario Calendario Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Botones-Filtradores Usuario Usuario Usuario"
       "Calendario Calendario Calendario Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis Mostrar-Ramis"
@@ -27,6 +27,7 @@
 .Botones-Principales { grid-area: Botones-Principales; }
 .Mostrar-Ramis { grid-area: Mostrar-Ramis; }
 .Botones-Filtradores { grid-area: Botones-Filtradores; }
+.Semestre{ grid-area: Semestre; }
 
 
 .expandir{
