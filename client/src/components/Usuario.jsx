@@ -6,6 +6,7 @@ import Calendario from './Calendario';
 import './Pestañainicial.css';
 import Mensajes from './Mensajes';
 import BotonesPrincipales from './BotonesPrincipales';
+import {tipoUsuario} from './VariablesGlovales';
 
 const Usuario = () => {
     const navigate = useNavigate();
@@ -53,7 +54,7 @@ const Usuario = () => {
                 left: '30px', // Cambia la distancia desde la izquierda
               }}
             >
-              Perfil
+              {"perfil - "+tipoUsuario }
             </h6>
             <button
               className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"  onClick = {irAPestañaLogin}
