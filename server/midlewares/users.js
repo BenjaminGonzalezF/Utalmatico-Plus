@@ -1,5 +1,11 @@
-import e from 'cors';
-import { guardarUsuario, buscarUsuario, mostrarUsuarios} from '../controllers/usersController.js';
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const root = path.resolve(__dirname, '../..');
+
+import { guardarUsuario, buscarUsuario, mostrarUsuarios } from '../controllers/usersController.js';
 
 
 export async function ingreso(req, res) {
@@ -12,19 +18,39 @@ export async function ingreso(req, res) {
     if (correo == "" || clave == "") {
         console.log("Datos no ingresados")
         return res.status(401).json({
-            massage: "Datos no ingresados"
+            message: "Datos no ingresados"
         });
     }
-    const result = await buscarUsuario(user);
-    if (result) {
-      return res.status(200).json({
-        message: "Usuario encontrado"
-      });
+    const usuario = await buscarUsuario(user);
+    if (usuario != null) {
+        return res.status(200).json({
+            message: "Usuario encontrado",
+            rol: usuario.rol
+        });
+        //redirigirUsuario(usuario.rol, res);
     } else {
-      return res.status(417).json({
-        message: "Usuario no encontrado"
-      });
-    } 
+        return res.status(417).json({
+            message: "Usuario no encontrado"
+        });
+    }
+}
+
+function redirigirUsuario(rol, res) {
+
+    if (rol === "Administrador") {
+        res.redirect('http://localhost:3000/inicio');
+    } else if (rol === "Profesor") {
+        console.log("Enviando a calendario");
+        //res.redirect('http://localhost:3000/calendario');
+        const filePath = path.join(root, 'client/src/components', 'VistaModulo.jsx');
+        res.sendFile(filePath);
+        
+    } else if (rol === "Alumno") {
+        res.redirect('http://localhost:3000/pestañaInicial');
+
+    } else {
+        res.status(404).send('Rol no válido');
+    }
 }
 
 export async function registrarUsuario(req, res) {
@@ -45,17 +71,17 @@ export async function registrarUsuario(req, res) {
         massage: "Datos Enviados a la BD"
     });
 }
-    export async function obtenerUsuarios(req, res) {
-        const result = await mostrarUsuarios();
-        if(result){
-            res.status(200).json({
-                result
-            })
-        }
-        return res.status(417).json({
-            massage: "Error al soliciatar los datos"
-        });
+export async function obtenerUsuarios(req, res) {
+    const result = await mostrarUsuarios();
+    if (result) {
+        res.status(200).json({
+            result
+        })
     }
+    return res.status(417).json({
+        massage: "Error al soliciatar los datos"
+    });
+}
 
 
 

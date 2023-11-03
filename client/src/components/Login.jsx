@@ -26,9 +26,11 @@ const Login = () => {
         body: JSON.stringify({ correo, clave }),
       });
 
+      console.log(response);
       if (response.ok) {
         console.log('Inicio de sesión exitoso');
-        handleLogin();
+        redireccionar(response)
+
       } else {
         console.error('Inicio de sesión fallido');
         setError('Usuario o contraseña incorrectos'); // Establece el mensaje de error
@@ -38,13 +40,19 @@ const Login = () => {
     }
   };
 
-  const irAPestañaInicial = () => {
-    navigate('/pestañaInicial');
-  };
+  async function redireccionar(response){
+    const data = await response.json();
 
-  const handleLogin = () => {
-    navigate('/pestañaInicial');
-  };
+        if(data.rol === "Administrador"){
+          navigate('/pestañaInicialAdmin');
+        }
+        if(data.rol === "Profesor"){
+          navigate('/pestañaInicial');
+        }
+        if(data.rol === "Alumno"){
+          navigate('/inicio');
+        }
+  }
 
   const fondo = "my-div bg-gray-100 flex flex-col justify-center items-center h-screen ";
   const formatoLabel = "px-1 text-sm text-gray-600";

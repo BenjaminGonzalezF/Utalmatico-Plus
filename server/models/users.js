@@ -14,33 +14,14 @@ var Usuario = new mongoose.Schema(
             required: true,
         },
         clave: {
-            type: Number,
-            required: true,
-        },
-        tipo: {
-            type: Number,
-            required: true,
-        },
-        voto: {
-            type: Number,
-            required: true,
-        },
-        conteoVotos: {
-            type: Number,
-            required: true,
-        },
-        votoPorM: {
-            type: Number,
-            required: true,
-        },
-        votoPorF: {
-            type: Number,
-            required: true,
-        },
-        invitado: {
             type: String,
             required: true,
         },
+        rol: {
+            type: String,
+            required: true,
+        },
+
     },
     {
         collection: 'Usuario',

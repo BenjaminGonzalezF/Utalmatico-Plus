@@ -4,13 +4,18 @@ import svgrPlugin from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root: './client', 
+  build: {
+    outDir: '../dist', 
+  },
   server: {
     port: 3000,
     proxy: {
-      "/api": "Enter your backend host with port",
+      "/api": "3001",
     },
   },
   plugins: [
+    [reactRefresh()],
     react(),
     svgrPlugin({
       svgrOptions: {
