@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MensajesAdmin from './MensajesAdmin';
+import AñadirAlumno from './añadirAlumno';
+import EliminarAlumno from './EliminarAlumno';
+import AñadirProfesor from './AñadirProfesor';
+import EliminarProfesor from './EliminarProfesor';
+import './AñadirAlumno.css';
+import './EliminarAlumno.css';
+import './AñadirProfesor.css'
+import './EliminarProfesor.css';
+
+
+
 
 export default function BotonesAdmin() {
   const navigate = useNavigate();
@@ -18,8 +29,43 @@ export default function BotonesAdmin() {
     setDropdownOpen1(!isDropdownOpen1);
   };
 
-  const irAMensajeAdmin = () => {
-    navigate('/mensajeAdmin');
+
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpenEliminar, setIsModalOpenEliminar] = useState(false);
+  const [isModalOpenAñadirProfesor, setIsModalOpenAñadirProfesor] = useState(false);
+  const [isModalOpenEliminarProfesor, setIsModalOpenEliminarProfesor] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const openModalEliminar = () => {
+    setIsModalOpenEliminar(true);
+  };
+
+  const closeModalEliminar = () => {
+    setIsModalOpenEliminar(false);
+  };
+
+  const openModalAñadirProfe = () => {
+    setIsModalOpenAñadirProfesor(true);
+  };
+  
+  const closeModalAñadirProfe = () => {
+    setIsModalOpenAñadirProfesor(false);
+  };
+  
+
+  const openModalEliminarProfessor = () => {
+    setIsModalOpenEliminar(true);
+  };
+
+  const closeModalEliminarProfesor = () => {
+    setIsModalOpenEliminar(false);
   };
 
 
@@ -40,7 +86,8 @@ export default function BotonesAdmin() {
             Modificar módulos
           </button>
           <button
-            className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover-bg-black"
+            onClick={openModal} 
+            className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
             style={{
               fontSize: '2vh',
               width: '10vw',
@@ -52,7 +99,8 @@ export default function BotonesAdmin() {
             Añadir alumno
           </button>
           <button
-            className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover-bg-black"
+            className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
+            onClick={openModalEliminar}
             style={{
               fontSize: '2vh',
               width: '10vw',
@@ -64,7 +112,8 @@ export default function BotonesAdmin() {
             Eliminar alumno
           </button>
           <button
-            className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover-bg-black"
+            className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
+            onClick={openModalAñadirProfe}
             style={{
               fontSize: '2vh',
               width: '10vw',
@@ -76,9 +125,8 @@ export default function BotonesAdmin() {
             Añadir profesor
           </button>
           <button
-            
-            className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover-bg-black"
-            onClick={() => setShowChat(true)}
+            className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
+            onClick={openModalEliminarProfessor}
             style={{
               fontSize: '2vh',
               width: '10vw',
@@ -86,6 +134,20 @@ export default function BotonesAdmin() {
               marginRight: '0.5vw',
               marginLeft: '0.5vw',
             }}
+          >
+            Eliminar profesor
+          </button>
+          <button
+            
+          className="mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
+          onClick={() => setShowChat(true)}
+          style={{
+            fontSize: '2vh',
+            width: '10vw',
+            height: '10vh',
+            marginRight: '0.5vw',
+            marginLeft: '0.5vw',
+          }}
           >
             Mensaje directo
           </button>
@@ -131,8 +193,11 @@ export default function BotonesAdmin() {
                 )}
             </div>
 
-
       </div>
+      <AñadirAlumno isOpen={isModalOpen} onClose={closeModal} />
+      <EliminarAlumno isOpen={isModalOpenEliminar} onClose={closeModalEliminar} />
+      <AñadirProfesor isOpen={isModalOpenAñadirProfesor} onClose={closeModalAñadirProfe} />
+      <EliminarProfesor isOpen={isModalOpenEliminarProfesor} onClose={closeModalEliminarProfesor} />
     </>
   );
 }
