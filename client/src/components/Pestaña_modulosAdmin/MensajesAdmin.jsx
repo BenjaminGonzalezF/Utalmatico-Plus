@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Mensajes = ({ onClose }) => {
+const MensajesAdmin = ({ onClose }) => {
     const [inputMessage, setInputMessage] = useState('');
     const [messages, setMessages] = useState([]);
   
@@ -31,7 +31,7 @@ const Mensajes = ({ onClose }) => {
                 </button>
                 <div className="fixed bottom-[calc(4rem+1.5rem)] right-0 mr-4 bg-white p-6 rounded-lg border border-[#e5e7eb] w-[400px] h-[540px]">
                     <div className="flex flex-col space-y-1.5 pb-6">
-                        <h2 className="font-semibold text-lg tracking-tight">Chat Profesor/Alumno</h2>
+                        <h2 className="font-semibold text-lg tracking-tight">ChatUtalmático</h2>
                         <p className="text-sm text-[#6b7280] leading-3">Más adelante se cambiará</p>
                     </div>
 
@@ -71,4 +71,4 @@ const Mensajes = ({ onClose }) => {
     );
 };
 
-export default Mensajes;
+export default MensajesAdmin;

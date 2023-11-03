@@ -15,22 +15,6 @@ const PestañaInicial = () => {
     const [showChat, setShowChat] = useState(false);
 
 
-  const handlePestañaInicial = () => {
-    navigate('/pestañaInicial');
-  };
-
-  const irAPestañaHorario = () => {
-    navigate('/horario');
-  };
-
-  const irAPestañaLogin = () => {
-    navigate('/');
-  };
-
-
-  const estiloRecuadro = "p-12 md:p-20 bg-white shadow-md rounded-3xl"; // Estilo original
-  const estiloPosicion = "absolute top-10 right-10"; // Cambiamos "left" por "right"
-  
 
   return (
     <>

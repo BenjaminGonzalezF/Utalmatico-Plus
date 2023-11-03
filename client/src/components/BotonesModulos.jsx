@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Pestañainicial.css';
+import './CssNotas.css';
+import NotasPopup from './NotasPopup';
+
 
 const BotonesModulos = () => {
     const navigate = useNavigate();
+    const [isNotasPopupOpen, setIsNotasPopupOpen] = useState(false);
 
     const irAPestañaInicial = () => {
         navigate('/pestañaInicial');
+      };
+
+    const toggleNotasPopup = () => {
+        setIsNotasPopupOpen(!isNotasPopupOpen);
       };
 
 
@@ -31,7 +39,7 @@ const BotonesModulos = () => {
         <button
             className="mt-3 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg
-            px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
+            px-6 py-3 block shadow-xl hover:text-white hover:bg-black" onClick={toggleNotasPopup}
             style = {{ 
             fontSize: '15px', 
             width: '180px',   // Cambia el ancho del botón
@@ -42,6 +50,7 @@ const BotonesModulos = () => {
             }}>
             Notas
         </button>
+        {isNotasPopupOpen && <NotasPopup onClose={toggleNotasPopup} />}
         <button
             className="mt-3 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg

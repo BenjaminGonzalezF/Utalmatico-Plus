@@ -1,6 +1,7 @@
 import RenderBotonesUnidades from '../vistas/vistaModulo/RenderBotonesUnidades';
 import BotonesModulos from './BotonesModulos';
 import BotonesProfe from './Pestaña_modulos/BotonesProfe';
+import BotonesAdmin from './Pestaña_modulosAdmin/BotonesAdmin';
 import './CssPestañaModulo.css';
 import {tipoUsuario, unidad} from './VariablesGlovales';
 
@@ -16,12 +17,16 @@ export default function VistaModulo({nombre}) {
     <>
         <div class="containeruwu">
 
-          {
+        {
             tipoUsuario === "profesor" ? (
               <div className="botonesProfe bg-red-500">
                 <BotonesProfe />
               </div>
-            ) : <div className="botonesProfe bg-red-500"></div>
+            ) : tipoUsuario === "admin" ? (
+              <div className="botonesProfe bg-red-500">
+                <BotonesAdmin />
+              </div>
+            ):<div className="botonesProfe bg-red-500"></div>
           }
           
           <div class="botones     bg-yellow-500          "><BotonesModulos/> </div>
