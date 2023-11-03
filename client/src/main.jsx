@@ -12,6 +12,7 @@ import VistaModulo from './components/VistaModulo.jsx'
 import Calendario from './components/Calendario.jsx'
 import BotonesFiltrado from './components/BotonesFiltrado.jsx'
 import Pendientes from './components/Pendientes.jsx'
+import Notas from './components/NotasPopup.jsx'
 
 
 const router = createBrowserRouter([
