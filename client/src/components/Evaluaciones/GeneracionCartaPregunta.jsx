@@ -2,7 +2,7 @@
 import CartaPreguntaAlternativa from './CartaPreguntaAlternativa';
 import CartaPreguntaDesarrollo from './CartaPreguntaDesarrollo';
 import CartaPreguntaCreaPregunta from './CartaPreguntaCreaPregunta';
-
+import userState from '../userState';
 function GeneracionCartaPregunta() {
 
   const Preguntasalternativa = [
@@ -34,7 +34,25 @@ function GeneracionCartaPregunta() {
         ))
         }
 
-        <CartaPreguntaCreaPregunta nombre="crear pregunta" descripcion={"aqui va tu pregunta"} />
+
+        {
+            userState.tipoUsuario === "profesor" ? (
+              <>
+                <CartaPreguntaCreaPregunta nombre="crear pregunta" descripcion={"aqui va tu pregunta"} />
+              </>
+            ) : userState.tipoUsuario === "alumno" ? (
+              <>
+              
+              </>
+            ):<>
+            </>
+          
+        }     
+        
+
+
+
+        
 
 
 
