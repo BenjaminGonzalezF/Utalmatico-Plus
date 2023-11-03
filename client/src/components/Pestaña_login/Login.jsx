@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import userState from '../userState';
+
 const Login = () => {
+
+ 
+
   const [correo, setCorreo] = useState('');
   const [clave, setClave] = useState('');
   const [error, setError] = useState(''); // Estado para el mensaje de error
@@ -44,12 +49,15 @@ const Login = () => {
     const data = await response.json();
 
         if(data.rol === "Administrador"){
+          userState.tipoUsuario = "admin"
           navigate('/pestañaInicial');
         }
         if(data.rol === "Profesor"){
+          userState.tipoUsuario = "profesor"
           navigate('/pestañaInicial');
         }
         if(data.rol === "Alumno"){
+          userState.tipoUsuario = "alumno"
           navigate('/pestañaInicial');
         }
   }
