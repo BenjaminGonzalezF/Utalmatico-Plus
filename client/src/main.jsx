@@ -14,7 +14,8 @@ import Calendario from './components/Calendario.jsx'
 import BotonesFiltrado from './components/BotonesFiltrado.jsx'
 import Pendientes from './components/Pendientes.jsx'
 import AñadirUnidad from './components/Pestaña_modulos/AñadirUnidad.jsx'
-
+import AñadirEvaluaciones from './components/Pestaña_modulos/AñadirEvaluaciones.jsx'
+import AsignarEvaluacion from './components/Pestaña_modulos/AsignarEvaluacion.jsx'
 
 const router = createBrowserRouter([
 {
@@ -37,6 +38,16 @@ const router = createBrowserRouter([
   path:'/añadirclase',
   element: <AñadirClase/>,
 },
+{
+  path:'/añadirEvaluaciones',
+  element: <AñadirEvaluaciones/>,
+},
+
+{
+  path:'/asignarevaluacion',
+  element: <AsignarEvaluacion/>
+},
+
 {
   path:'/añadirdescargable',
   element: <AñadirDescargable/>,

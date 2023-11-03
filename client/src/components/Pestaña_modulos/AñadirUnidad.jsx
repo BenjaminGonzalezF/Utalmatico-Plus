@@ -25,7 +25,7 @@ function AñadirUnidad() {
 
   return (
     <>
-    <div class="container ">
+    <div class="containerunidad bg-teal-500">
         <div class="formulario-generico bg-yellow-500 flex items-center justify-center ">
             <form class="w-full max-w-lg">
             <div class="flex flex-wrap -mx-3 mb-6">
