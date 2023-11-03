@@ -5,13 +5,12 @@ import BotonesModulos from './BotonesModulos';
 import BotonesProfe from './Pestaña_modulos/BotonesProfe';
 import BotonesAdmin from './Pestaña_modulosAdmin/BotonesAdmin';
 import './CssPestañaModulo.css';
-import {tipoUsuario, unidad} from './VariablesGlovales';
-
+import userState from './userState';
 import React, { useState } from 'react';
 export default function VistaModulo({nombre}) {
 
   //funciones para manejar los pop-ups
- 
+  
 
 
 
@@ -20,11 +19,11 @@ export default function VistaModulo({nombre}) {
         <div class="containeruwu">
 
         {
-            tipoUsuario === "profesor" ? (
+            userState.tipoUsuario === "profesor" ? (
               <div className="botonesProfe bg-red-500">
                 <BotonesProfe />
               </div>
-            ) : tipoUsuario === "admin" ? (
+            ) : userState.tipoUsuario === "admin" ? (
               <div className="botonesProfe bg-red-500">
                 <BotonesAdmin />
               </div>
