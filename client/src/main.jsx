@@ -1,17 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import Login from './components/Login.jsx' 
+import Login from './components/Pestaña_login/Login.jsx'
 import PestañaInicial from './components/PestañaInicial.jsx'
 import Horario from './components/Horario.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import PestañaModulo from './components/PestañaModulo.jsx'
+import AñadirClase from './components/Pestaña_modulos/AñadirClase.jsx'
+import AñadirDescargable from './components/Pestaña_modulos/AñadirDescargable.jsx'
 import Mensajes from './components/Mensajes.jsx'
 import GeneracionCartaModulos from './components/GeneracionCartaModulos.jsx'
 import VistaModulo from './components/VistaModulo.jsx'
 import Calendario from './components/Calendario.jsx'
 import BotonesFiltrado from './components/BotonesFiltrado.jsx'
 import Pendientes from './components/Pendientes.jsx'
+import AñadirUnidad from './components/Pestaña_modulos/AñadirUnidad.jsx'
 
 
 const router = createBrowserRouter([
@@ -28,9 +30,18 @@ const router = createBrowserRouter([
   element: <PestañaInicial/>,
 },
 {
-  path: '/pestañaModulo', 
-  element: <PestañaModulo/>,
+  path:'/añadirunidad',
+  element: <AñadirUnidad/>
 },
+{
+  path:'/añadirclase',
+  element: <AñadirClase/>,
+},
+{
+  path:'/añadirdescargable',
+  element: <AñadirDescargable/>,
+},
+
 {
   path: '/modulo', 
   element: <VistaModulo/>,
