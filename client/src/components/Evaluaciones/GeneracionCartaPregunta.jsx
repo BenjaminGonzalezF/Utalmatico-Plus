@@ -13,10 +13,8 @@ function GeneracionCartaPregunta() {
     { nombre: 'Pregunta 5', descripcion: 'Pregunta de alternativa ejemplo 55, esto puede contener texto', alternativa1: 'Respuesta ejemplo 234', alternativa2: 'Respuestasss ejemplo 2', alternativa3: 'Respuesta ejemplo 3', alternativa4: 'Respuesta ejuwuemplo 4' },
     { nombre: 'Pregunta 6', descripcion: 'Pregunta de alternativa ejemplo 666, esto puede contener texto', alternativa1: 'Respuesta ejemplo 1', alternativa2: 'Respuesta ejemplo 2', alternativa3: 'Respujjesta ejemplo 3', alternativa4: 'Respuesta ejemplo 4' },
     { nombre: 'Pregunta 7', descripcion: 'Pregunta de alternativa ejemplo 7777, esto puede contener texto', alternativa1: 'Respuesta ejemplo 1', alternativa2: 'Respuesta ejemplo 2', alternativa3: 'Respuesta ejemplo 3', alternativa4: 'Respuesta ejemplo 4' },
-    
-    
-    
   ];
+
 
   return (
     <div className="">
@@ -33,7 +31,10 @@ function GeneracionCartaPregunta() {
             alternativa3={pregunta.alternativa3}
             alternativa4={pregunta.alternativa4}
           />
-        ))}
+        ))
+        }
+
+        <CartaPreguntaCreaPregunta nombre="crear pregunta" descripcion={"aqui va tu pregunta"} />
 
 
 
