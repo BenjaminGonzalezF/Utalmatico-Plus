@@ -44,13 +44,13 @@ const Login = () => {
     const data = await response.json();
 
         if(data.rol === "Administrador"){
-          navigate('/pestañaInicialAdmin');
+          navigate('/pestañaInicial');
         }
         if(data.rol === "Profesor"){
           navigate('/pestañaInicial');
         }
         if(data.rol === "Alumno"){
-          navigate('/inicio');
+          navigate('/pestañaInicial');
         }
   }
 
