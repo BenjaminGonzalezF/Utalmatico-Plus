@@ -1,4 +1,4 @@
-import ElementoClases from "./compontes/ElementoClases";
+import ElementoClases from "../compontes/ElementoClases";
 
 export default function RenderContenidoUnidades() {
   const clases = [

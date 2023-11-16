@@ -1,11 +1,11 @@
-import RenderBotonesUnidades from '../vistas/vistaModulo/RenderBotonesUnidades';
-import RenderContenidoUnidades from '../vistas/vistaModulo/RenderContenidoUnidades';
+import RenderBotonesUnidades from './renders/RenderBotonesUnidades';
+import RenderContenidoUnidades from './renders/RenderContenidoUnidades';
 
-import BotonesModulos from './BotonesModulos';
-import BotonesProfe from './Pestaña_modulos/BotonesProfe';
-import BotonesAdmin from './Pestaña_modulosAdmin/BotonesAdmin';
+import BotonesModulos from '../../components/BotonesModulos';
+import BotonesProfe from './compontes/BotonesProfe';
+import BotonesAdmin from '../Pestaña_modulosAdmin/BotonesAdmin';
 import './CssPestañaModulo.css';
-import userState from './userState';
+import userState from '../../components/userState';
 import React, { useState } from 'react';
 export default function VistaModulo({nombre}) {
 

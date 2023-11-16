@@ -1,4 +1,4 @@
-import BotonUnidad from "./compontes/BotonUnidad";
+import BotonUnidad from "../compontes/BotonUnidad";
 
 function RenderBotonesUnidades() {
 
