@@ -11,7 +11,7 @@ const guardarUsuario = (nuevoUsuario) => {
   console.log("Usuario guardado: " + user);
 };
 
-async function mostrarUsuarios() {
+async function solicitarUsuarios() {
   try {
     const usuarios = await usuario.find({}); // Consulta todos los documentos en la colección de usuarios
     console.log(usuarios); // Imprime los usuarios en la consola
@@ -57,4 +57,4 @@ async function buscarUsuario(nuevoUsuario) {
   
 }
 
-export { guardarUsuario, mostrarUsuarios, verificarCorreo, buscarUsuario }; 
+export { guardarUsuario, solicitarUsuarios, verificarCorreo, buscarUsuario }; 

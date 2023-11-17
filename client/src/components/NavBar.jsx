@@ -23,7 +23,7 @@ export default function NavBar() {
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex flex-shrink-0 items-center">
-          <img class="h-8 w-auto" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ecured.cu%2Fimages%2F5%2F53%2F132551_untalca.gif&f=1&nofb=1&ipt=797fa0824b513bcf77c57246b89d1a363e76284c7251d9757dd0e05f804cb2b2&ipo=images" alt="Your Company"></img>
+          <img class="h-8 w-auto" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ecured.cu%2Fimages%2F5%2F53%2F132551_untalca.gif&f=1&nofb=1&ipt=797fa0824b513bcf77c57246b89d1a363e76284c7251d9757dd0e05f804cb2b2&ipo=images  " alt="Your Company"></img>
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">

@@ -5,7 +5,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const root = path.resolve(__dirname, '../..');
 
-import { guardarUsuario, buscarUsuario, mostrarUsuarios } from '../controllers/usersController.js';
+import { guardarUsuario, buscarUsuario, solicitarUsuarios } from '../controllers/usersController.js';
 
 
 export async function ingreso(req, res) {
@@ -72,7 +72,7 @@ export async function registrarUsuario(req, res) {
     });
 }
 export async function obtenerUsuarios(req, res) {
-    const result = await mostrarUsuarios();
+    const result = await solicitarUsuarios();
     if (result) {
         res.status(200).json({
             result
