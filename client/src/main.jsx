@@ -17,6 +17,7 @@ import Notas from './components/NotasPopup.jsx'
 import AñadirUnidad from './vistas/vistaModulo/compontes/AñadirUnidad.jsx'
 import AñadirEvaluaciones from './vistas/vistaModulo/compontes/AñadirEvaluaciones.jsx'
 import AsignarEvaluacion from './vistas/vistaModulo/compontes/AsignarEvaluacion.jsx'
+import GestionarAlumnos from './vistas/Pestaña_admin/GestionarAlumnos.jsx'
 
 const router = createBrowserRouter([
 {
@@ -77,7 +78,12 @@ const router = createBrowserRouter([
 {
   path: '/pendientes', 
   element: <Pendientes/>,
-}
+},
+{
+  path: '/GestionarAlumnos', 
+  element: <GestionarAlumnos/>,
+},
+
 
 ]);
 
