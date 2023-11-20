@@ -4,7 +4,7 @@ export default function Calendario() {
                     <div class="max-w-sm w-full shadow-lg">
                         <div class="md:p-8 p-5 dark:bg-gray-500 bg-black rounded-t">
                             <div class="px-4 flex items-center justify-between">
-                                <span  tabindex="0" class="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800">October 2020</span>
+                                <span  tabIndex="0" class="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800">October 2020</span>
                                 <div class="flex items-center">
                                     <button aria-label="calendar backward" class="focus:text-gray-400 hover:text-gray-400 text-gray-800 dark:text-gray-100">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -113,7 +113,7 @@ export default function Calendario() {
                                             <td>
                                                 <div class="w-full h-full">
                                                     <div class="flex items-center justify-center w-full rounded-full cursor-pointer">
-                                                        <a  role="link" tabindex="0" class="focus:outline-none  focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-500 hover:bg-indigo-500 text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-indigo-700 rounded-full">8</a>
+                                                        <a  role="link" tabIndex="0" class="focus:outline-none  focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-500 hover:bg-indigo-500 text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-indigo-700 rounded-full">8</a>
                                                     </div>
                                                 </div>
                                             </td>

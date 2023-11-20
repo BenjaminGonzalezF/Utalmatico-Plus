@@ -9,6 +9,7 @@ export default function MatricularAlumnos() {
   const [error, setError] = useState('');
   const [nombre, setNombre] = useState('');
   const [rut, setRut] = useState('');
+  const [carrera, setCarrera] = useState('');
 
 
 
@@ -27,6 +28,10 @@ export default function MatricularAlumnos() {
   const handleRutChange = (event) => {
     setRut(event.target.value);
   };
+  const handleCarreraChange = (event) => {
+    setCarrera(event.target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -64,7 +69,7 @@ export default function MatricularAlumnos() {
             <input type="text" id="rut" className={formatoInput} value={rut} placeholder="10.000.000-0" onChange={handleRutChange} />
           </div>
           <div className="m-3">
-            <select value="Carrera" class="bg-transparent">
+            <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
               <option value="Carrera">Carrera</option>
               <option value="Computación">A</option>
               <option value="Industrial">B</option>

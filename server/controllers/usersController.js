@@ -21,6 +21,16 @@ async function solicitarUsuarios() {
     return false
   }
 }
+export async function solicitarAlumnos() {
+  try {
+    const usuarios = await usuario.find({}); 
+    console.log(usuarios); 
+    return usuarios;
+  } catch (error) {
+    console.error('Error al obtener alumnos:', error);
+    return false
+  }
+}
 
 async function verificarCorreo(nuevoUsuario) {
   let correo = nuevoUsuario.email;

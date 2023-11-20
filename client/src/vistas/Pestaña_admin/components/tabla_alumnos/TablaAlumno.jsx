@@ -3,54 +3,41 @@
 export default function TablaAlumno({ nombre, correo, estado, carrera, modulos }) {
 
     return (
-        <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-            <tr class="hover:bg-gray-50">
-                <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-                    <div class="relative h-10 w-10">
+            <tr className="hover:bg-gray-50 flex justify-center">
+                <th className="flex gap-3 px-6 py-4 font-normal text-gray-900">
+                    <div className="relative h-10 w-10">
                         <img
-                            class="h-full w-full rounded-full object-cover object-center"
+                            className="h-full w-full rounded-full object-cover object-center"
                             src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             alt=""
                         />
-                        <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
+                        <span className="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
                     </div>
-                    <div class="text-sm">
-                        <div class="font-medium text-gray-700">{nombre}</div>
-                        <div class="text-gray-400">{correo}</div>
+                    <div className="text-sm">
+                        <div className="font-medium text-gray-700">{nombre}</div>
+                        <div className="text-gray-400">{correo}</div>
                     </div>
                 </th>
-                <td class="px-6 py-4">
+                <td className="px-6 py-4">
                     <span
-                        class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600"
+                        className="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600"
                     >
-                        <span class="h-1.5 w-1.5 rounded-full bg-green-600"></span>
+                        <span className="h-1.5 w-1.5 rounded-full bg-green-600"></span>
                         {estado}
                     </span>
                 </td>
-                <td class="px-6 py-4">{carrera}</td>
-                <td class="px-6 py-4">
-                    <div class="flex gap-2">
+                <td className="px-6 py-4">{carrera}</td>
+                <td className="px-6 py-4">
+                    <div className="flex gap-2">
                         <span
-                            class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"
+                            className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"
                         >
                             {modulos}
                         </span>
-                        {/* <span
-                      class="inline-flex items-center gap-1 rounded-full bg-indigo-50 px-2 py-1 text-xs font-semibold text-indigo-600"
-                    >
-                      Product
-                    </span>
-                    <span
-                      class="inline-flex items-center gap-1 rounded-full bg-violet-50 px-2 py-1 text-xs font-semibold text-violet-600"
-                    >
-                      Develop
-                    </span> */}
                     </div>
                 </td>
-                <td class="px-6 py-4">
+                <td className="px-6 py-4">
                 </td>
             </tr>
-        </tbody>
-
     );
 }
