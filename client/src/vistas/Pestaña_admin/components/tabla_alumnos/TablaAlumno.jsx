@@ -3,7 +3,7 @@
 export default function TablaAlumno({ nombre, correo, estado, carrera, modulos }) {
 
     return (
-            <tr className="hover:bg-gray-50 flex justify-center">
+            <tr className="hover:bg-gray-200 flex justify-center">
                 <th className="flex gap-3 px-6 py-4 font-normal text-gray-900">
                     <div className="relative h-10 w-10">
                         <img

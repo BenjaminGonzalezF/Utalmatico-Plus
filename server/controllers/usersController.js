@@ -23,12 +23,26 @@ async function solicitarUsuarios() {
 }
 export async function solicitarAlumnos() {
   try {
-    const usuarios = await usuario.find({}); 
-    console.log(usuarios); 
-    return usuarios;
+    const alumnos = []; 
+    const usuarios = await usuario.find({});
+
+    usuarios.forEach((user) => {
+      if (user.rol === "Alumno") {
+        const alumno = {
+          nombre: user.nombre,
+          apellido: user.apellido,
+          correo: user.correo,
+          carrera: user.carrera
+        };
+        alumnos.push(alumno);
+      }
+    });
+
+    console.log(alumnos); 
+    return alumnos; 
   } catch (error) {
     console.error('Error al obtener alumnos:', error);
-    return false
+    return false;
   }
 }
 

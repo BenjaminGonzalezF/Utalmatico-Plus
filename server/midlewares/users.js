@@ -86,7 +86,8 @@ export async function obtenerUsuarios(req, res) {
 export async function obtenerAlumnos(req, res) {
     const result = await solicitarAlumnos();
     if (result) {
-        res.status(200).json({
+        console.log("Alumnos obtenidos");
+        return res.status(200).json({
             result
         })
     }

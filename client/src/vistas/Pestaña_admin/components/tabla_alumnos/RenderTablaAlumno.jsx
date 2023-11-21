@@ -1,30 +1,36 @@
+import React, { useState, useEffect } from 'react';
 import TablaAlumno from './TablaAlumno';
 
 export default function RenderTablaAlumno() {
+  const [alumnos, setAlumnos] = useState([]);
 
-  const solicitarUsuarios = async (event) => {
+  useEffect(() => {
+    const solicitarUsuarios = async () => {
+      console.log('Solicitando usuarios');
+      try {
+        const response = await fetch('http://localhost:3001/getAlumnos', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
 
-    event.preventDefault();
-    try {
-      const response = await fetch('http://localhost:3001/getAlumnos', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      console.log(response);
-      if (response.ok) {
-        console.log('Inicio de sesión exitoso');
-/*         redireccionar(response)
- */
-      } else {
-        console.error('Inicio de sesión fallido');
-        setError('Usuario o contraseña incorrectos'); // Establece el mensaje de error
+        if (response.ok) {
+          console.log('Solicitud exitosa');
+          const data = await response.json();
+          console.log('Datos de usuarios:', data.result);
+          
+          setAlumnos(data.result);
+        } else {
+          console.error('Error al obtener usuarios');
+        }
+      } catch (error) {
+        console.error('Error al realizar la solicitud:', error);
       }
-    } catch (error) {
-      console.error('Error al realizar la solicitud:', error);
-    }
-  };
+    };
+
+    solicitarUsuarios();
+  }, []); // Se ejecuta solo una vez al montar el componente
 
 
   const nombre = 'Alumno 1';
@@ -45,8 +51,19 @@ export default function RenderTablaAlumno() {
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-100 border-t border-gray-100">
-            <TablaAlumno {...{ nombre, correo, estado, carrera, modulos }} />
-        </tbody>
+          {
+            alumnos.map((alumno, index) => (
+              <TablaAlumno
+                key={index}
+                nombre={alumno.nombre}
+                correo={alumno.correo}
+                estado={"activo"}
+                carrera={"Ingeniería en Sistemas"}
+                modulos={"Módulo 1"}
+              />
+            ))
+          }
+          </tbody>
       </table>
     </div>
   );
