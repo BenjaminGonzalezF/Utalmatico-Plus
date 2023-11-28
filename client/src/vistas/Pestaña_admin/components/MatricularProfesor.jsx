@@ -11,7 +11,38 @@ export default function MatricularProfesor() {
   const [rut, setRut] = useState('');
   const [carrera, setCarrera] = useState('');
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3001/matricularProfesor', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ correo, clave, nombre, rut, carrera }),
+      });
 
+      console.log(response);
+      if (response.ok) {
+        console.log('Profesor inscrito');
+        notificarEnvioExitoso()
+        recargarTabla()
+
+      } else {
+        console.error('Error ');
+        setError('Error al inscribir a profesor'); // Establece el mensaje de error
+      }
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+    }
+  };
+
+   function notificarEnvioExitoso() {
+    alert("Profesor inscrito");
+  }
+    function recargarTabla(){
+     window.location.reload();
+    }
 
   const handleCorreoChange = (event) => {
     setCorreo(event.target.value);
@@ -30,10 +61,6 @@ export default function MatricularProfesor() {
   };
   const handleCarreraChange = (event) => {
     setCarrera(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
   };
 
 
@@ -71,8 +98,8 @@ export default function MatricularProfesor() {
           <div className="m-3">
             <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
               <option value="Carrera">Carrera</option>
-              <option value="Computación">A</option>
-              <option value="Industrial">B</option>
+              <option value="Ingenieria Civíl en Computación">Ingeniería Civil en Computación</option>
+              <option value="Ingenieria Civíl Industrial">Ingeniería Civil Industrial</option>
             </select>
           </div>
 

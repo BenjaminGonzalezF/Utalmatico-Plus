@@ -1,15 +1,7 @@
 import mongoose from "mongoose";
-var Usuario = new mongoose.Schema(
+var Profesor = new mongoose.Schema(
     {
-        nombre: {
-            type: String,
-            required: true,
-        },
-        apellido: {
-            type: String,
-            required: true,
-        },
-        correo: {
+        correo:{
             type: String,
             required: true,
         },
@@ -17,16 +9,23 @@ var Usuario = new mongoose.Schema(
             type: String,
             required: true,
         },
-        rol: {
+        nombre: {
             type: String,
             required: true,
         },
-
+        rut: {
+            type: String,
+            required: true,
+        },
+        carrera: {
+            type: String,
+            required: true,
+        },
     },
     {
-        collection: 'Usuario',
+        collection: 'Profesores',
         versionKey: false
     }
 )
 
-export const usuario = new mongoose.model('Usuario', Usuario);
+export const profesor = new mongoose.model('Profesores', Profesor);
