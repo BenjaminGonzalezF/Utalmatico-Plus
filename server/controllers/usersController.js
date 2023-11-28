@@ -46,6 +46,32 @@ export async function solicitarAlumnos() {
   }
 }
 
+export async function solicitarProfesores() {
+  try {
+    const profesores = []; 
+    const usuarios = await usuario.find({});
+
+    usuarios.forEach((user) => {
+      if (user.rol === "Profesor") {
+        const profesor = {
+          nombre: user.nombre,
+          apellido: user.apellido,
+          correo: user.correo,
+          carrera: user.carrera //cambiar a ramo o algo así
+        };
+        profesores.push(profesor);
+      }
+    });
+
+    console.log(profesores); 
+    return profesores; 
+  } catch (error) {
+    console.error('Error al obtener profesores:', error);
+    return false;
+  }
+}
+
+
 async function verificarCorreo(nuevoUsuario) {
   let correo = nuevoUsuario.email;
 
