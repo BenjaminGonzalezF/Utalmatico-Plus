@@ -12,6 +12,36 @@ export default function MatricularAlumnos() {
   const [carrera, setCarrera] = useState('');
 
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3001/matricularAlumno', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ correo, clave, nombre, rut, carrera }),
+      });
+
+      console.log(response);
+      if (response.ok) {
+
+        console.log('Alumno matriculado');
+        notificarEnvioExitoso()
+
+      } else {
+        console.error('Error ');
+        setError('Error al matricular un alumno'); // Establece el mensaje de error
+      }
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+    }
+  };
+
+   function notificarEnvioExitoso() {
+    alert("Alumno matriculado");
+  }
+
 
   const handleCorreoChange = (event) => {
     setCorreo(event.target.value);
@@ -32,9 +62,6 @@ export default function MatricularAlumnos() {
     setCarrera(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
 
 
   const fondo = "my-div bg-gray-100 flex flex-col justify-center items-center h-screen ";
@@ -71,8 +98,8 @@ export default function MatricularAlumnos() {
           <div className="m-3">
             <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
               <option value="Carrera">Carrera</option>
-              <option value="Computación">A</option>
-              <option value="Industrial">B</option>
+              <option value="Computación">Ingenieria Civíl en Computación</option>
+              <option value="Industrial">Ingenieria Civíl Industrial</option>
             </select>
           </div>
 
