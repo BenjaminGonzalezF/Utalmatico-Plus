@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RenderTablaProfesor from './components/tabla_profesores/RenderTablaProfesor'; // Corregir el nombre del archivo
+import RenderTablaProfesor from './components/tabla_profesores/RenderTablaProfesor';
 import NavBar from '../../components/NavBar';
 import MatricularProfesor from './components/MatricularProfesor';
 
