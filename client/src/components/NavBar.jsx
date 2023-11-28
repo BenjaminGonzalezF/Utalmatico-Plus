@@ -9,6 +9,10 @@ export default function NavBar() {
     navigate('/GestionModulos');
   };
 
+  const irAadminProfesor = () => {
+    navigate('/GestionProfesor');
+  };
+
     return (
         <>
 
@@ -37,7 +41,7 @@ export default function NavBar() {
           <div className="flex space-x-4">
             <a href="#" className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a>
             <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Gestionar Alumnos</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Gestionar Profesor</a>
+            <a onClick={irAadminProfesor} className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Gestionar Profesor</a>
             <a onClick={irAadminModulo} className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Gestionar Módulos</a>
           </div>
         </div>

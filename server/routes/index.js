@@ -10,11 +10,9 @@ function initRoutes(app){
   app.post("/registro", usersMidleware.registrarUsuario);
   app.get("/getusuarios", usersMidleware.obtenerUsuarios);
   app.get("/getAlumnos", usersMidleware.obtenerAlumnos);
+  app.get("/getProfesores", usersMidleware.obtenerProfesores);
 
     
-
- // app.post("/votacion", encuesta.votacion);
-  //app.get("/buscarUsuario/", usersMidleware.buscar);
 }
 export { initRoutes}
 

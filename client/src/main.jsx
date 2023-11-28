@@ -19,6 +19,7 @@ import AñadirEvaluaciones from './vistas/vistaModulo/compontes/AñadirEvaluacio
 import AsignarEvaluacion from './vistas/vistaModulo/compontes/AsignarEvaluacion.jsx'
 import GestionarAlumnos from './vistas/Pestaña_admin/GestionarAlumnos.jsx'
 import GestionarModulos from './vistas/Pestaña_admin/GestionarModulos.jsx'
+import GestionarProfesor from './vistas/Pestaña_admin/GestionarProfesor.jsx'
 
 const router = createBrowserRouter([
 {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
 {
   path: '/GestionModulos',
   element: <GestionarModulos/>
+},
+{
+  path: '/GestionProfesor',
+  element: <GestionarProfesor/>
 },
 
 
