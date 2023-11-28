@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MensajesAdmin from './MensajesAdmin';
-import AñadirAlumno from './añadirAlumno';
+import AñadirAlumno from './AñadirAlumno';
 import EliminarAlumno from './EliminarAlumno';
 import AñadirProfesor from './AñadirProfesor';
 import EliminarProfesor from './EliminarProfesor';
