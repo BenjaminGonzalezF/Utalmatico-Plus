@@ -101,8 +101,8 @@ export default function MatricularAlumnos() {
           <div className="m-3">
             <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
               <option value="Carrera">Carrera</option>
-              <option value="Ingenieria Civíl en Computación">Ingenieria Civíl en Computación</option>
-              <option value="Ingenieria Civíl Industrial">Ingenieria Civíl Industrial</option>
+              <option value="Ingenieria Civíl en Computación">Ingeniería Civil en Computación</option>
+              <option value="Ingenieria Civíl Industrial">Ingeniería Civil Industrial</option>
             </select>
           </div>
 

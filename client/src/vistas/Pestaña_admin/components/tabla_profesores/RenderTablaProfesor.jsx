@@ -53,7 +53,7 @@ export default function RenderTablaProfesores() {
                 nombre={profesor.nombre}
                 correo={profesor.correo}
                 estado={"activo"}
-                carrera={"Ingeniería en Sistemas"}
+                carrera={profesor.carrera}
                 ramo={"Ramo 1"}
               />
             ))
