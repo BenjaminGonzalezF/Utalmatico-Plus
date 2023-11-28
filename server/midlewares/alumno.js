@@ -1,4 +1,4 @@
-import {registrarAlumno} from '../controllers/controladorAlumnos.js';
+import {registrarAlumno, solicitarAlumnos} from '../controllers/controladorAlumnos.js';
 
 async function matricularAlumno(req, res) {
     const { correo, clave, nombre, rut, carrera } = req.body;
@@ -21,4 +21,17 @@ async function matricularAlumno(req, res) {
     });
 }
 
-export { matricularAlumno }; 
+async function obtenerAlumnos(req, res) {
+    const result = await solicitarAlumnos();
+    if (result) {
+        console.log("Alumnos obtenidos");
+        return res.status(200).json({
+            result
+        })
+    }
+    return res.status(417).json({
+        massage: "Error al solicitar los datos"
+    });
+}
+
+export { matricularAlumno, obtenerAlumnos }; 

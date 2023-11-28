@@ -33,11 +33,6 @@ export default function RenderTablaAlumno() {
   }, []); // Se ejecuta solo una vez al montar el componente
 
 
-  const nombre = 'Alumno 1';
-  const correo = 'alumno@u.cl';
-  const estado = 'Activo';
-  const carrera = 'Ingeniería en Sistemas';
-  const modulos = 'Módulo 1';
 
   return (
     <div className="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5 mt-20">
@@ -58,7 +53,7 @@ export default function RenderTablaAlumno() {
                 nombre={alumno.nombre}
                 correo={alumno.correo}
                 estado={"activo"}
-                carrera={"Ingeniería en Sistemas"}
+                carrera={alumno.carrera}
                 modulos={"Módulo 1"}
               />
             ))

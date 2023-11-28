@@ -11,7 +11,7 @@ function initRoutes(app){
   app.post("/registro", usersMidleware.registrarUsuario);
   app.post("/matricularAlumno", alumnos.matricularAlumno);
   app.get("/getusuarios", usersMidleware.obtenerUsuarios);
-  app.get("/getAlumnos", usersMidleware.obtenerAlumnos);
+  app.get("/getAlumnos", alumnos.obtenerAlumnos);
   app.get("/getProfesores", usersMidleware.obtenerProfesores);
 
     

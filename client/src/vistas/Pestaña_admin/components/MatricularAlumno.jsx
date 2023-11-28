@@ -25,9 +25,9 @@ export default function MatricularAlumnos() {
 
       console.log(response);
       if (response.ok) {
-
         console.log('Alumno matriculado');
         notificarEnvioExitoso()
+        recargarTabla()
 
       } else {
         console.error('Error ');
@@ -41,6 +41,9 @@ export default function MatricularAlumnos() {
    function notificarEnvioExitoso() {
     alert("Alumno matriculado");
   }
+    function recargarTabla(){
+     window.location.reload();
+    }
 
 
   const handleCorreoChange = (event) => {
@@ -88,7 +91,7 @@ export default function MatricularAlumnos() {
             <p className="text-red-500">{error}</p> {/*  Muestra el mensaje de error */}
           </div>
           <div className="m-2 ">
-            <label className={formatoLabel}>Nombre</label>
+            <label className={formatoLabel}>Nombre Completo</label>
             <input type="text" id="nombre" className={formatoInput} value={nombre} placeholder="Jeff Bezos" onChange={handleNombreChange} />
           </div>
           <div className="m-2 ">
@@ -98,8 +101,8 @@ export default function MatricularAlumnos() {
           <div className="m-3">
             <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
               <option value="Carrera">Carrera</option>
-              <option value="Computación">Ingenieria Civíl en Computación</option>
-              <option value="Industrial">Ingenieria Civíl Industrial</option>
+              <option value="Ingenieria Civíl en Computación">Ingenieria Civíl en Computación</option>
+              <option value="Ingenieria Civíl Industrial">Ingenieria Civíl Industrial</option>
             </select>
           </div>
 
