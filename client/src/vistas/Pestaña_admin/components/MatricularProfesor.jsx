@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import userState from '../../../components/userState';
 import React, { useState } from 'react';
 
-export default function MatricularAlumnos() {
+export default function MatricularProfesor() {
 
   const [correo, setCorreo] = useState('');
   const [clave, setClave] = useState('');
@@ -11,12 +11,10 @@ export default function MatricularAlumnos() {
   const [rut, setRut] = useState('');
   const [carrera, setCarrera] = useState('');
 
-  
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/matricularAlumno', {
+      const response = await fetch('http://localhost:3001/matricularProfesor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,13 +24,13 @@ export default function MatricularAlumnos() {
 
       console.log(response);
       if (response.ok) {
-        console.log('Alumno matriculado');
+        console.log('Profesor inscrito');
         notificarEnvioExitoso()
         recargarTabla()
 
       } else {
         console.error('Error ');
-        setError('Error al matricular un alumno'); // Establece el mensaje de error
+        setError('Error al inscribir a profesor'); // Establece el mensaje de error
       }
     } catch (error) {
       console.error('Error al realizar la solicitud:', error);
@@ -40,12 +38,11 @@ export default function MatricularAlumnos() {
   };
 
    function notificarEnvioExitoso() {
-    alert("Alumno matriculado");
+    alert("Profesor inscrito");
   }
     function recargarTabla(){
      window.location.reload();
     }
-
 
   const handleCorreoChange = (event) => {
     setCorreo(event.target.value);
@@ -67,13 +64,9 @@ export default function MatricularAlumnos() {
   };
 
 
-
   const fondo = "my-div bg-gray-100 flex flex-col justify-center items-center h-screen ";
   const formatoLabel = "px-1 text-sm text-gray-600";
   const formatoInput = "text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none";
-
-  //crea lista dinamica de carreras
-  const listaCarreras = ["Ingenieria Civil Informatica", "Ingenieria Civil Industrial", "Ingenieria Civil Mecanica", "Ingenieria Civil Electrica", "Ingenieria Civil en Minas", "Ingenieria Civil en Obras Civiles"];
 
   return (
     <div>
@@ -81,7 +74,7 @@ export default function MatricularAlumnos() {
         <form className="p-12 md:p-20 bg-white shadow-md rounded-3xl" onSubmit={handleSubmit} >
           <div className="flex justify-center">
             <h6 className="text-3xl font-bold">
-              Matricular alumno
+              Matricular profesor
             </h6>
           </div>
 
@@ -95,7 +88,7 @@ export default function MatricularAlumnos() {
             <p className="text-red-500">{error}</p> {/*  Muestra el mensaje de error */}
           </div>
           <div className="m-2 ">
-            <label className={formatoLabel}>Nombre Completo</label>
+            <label className={formatoLabel}>Nombre</label>
             <input type="text" id="nombre" className={formatoInput} value={nombre} placeholder="Jeff Bezos" onChange={handleNombreChange} />
           </div>
           <div className="m-2 ">
@@ -104,14 +97,9 @@ export default function MatricularAlumnos() {
           </div>
           <div className="m-3">
             <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
-            
-              {//mostrar todos los elementos de la lista de carreras
-                listaCarreras.map((carrera) => (
-                  <option value={carrera}>{carrera}</option>
-                ))
-
-              }
-
+              <option value="Carrera">Carrera</option>
+              <option value="Ingenieria Civíl en Computación">Ingeniería Civil en Computación</option>
+              <option value="Ingenieria Civíl Industrial">Ingeniería Civil Industrial</option>
             </select>
           </div>
 

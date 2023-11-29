@@ -1,7 +1,8 @@
 import * as usersMidleware from '../midlewares/users.js';
 import * as test from '../midlewares/test.js';
 import * as encuesta from '../midlewares/votacion.js';
-
+import * as alumnos from '../midlewares/alumno.js';
+import * as profesores from '../midlewares/profesor.js';
 
 
 function initRoutes(app){
@@ -10,14 +11,13 @@ function initRoutes(app){
   app.post("/login", usersMidleware.ingreso);
   app.get("/", test.test);    
   app.post("/registro", usersMidleware.registrarUsuario);
+  app.post("/matricularAlumno", alumnos.matricularAlumno);
+  app.post("/matricularProfesor", profesores.matricularProfesor);
   app.get("/getusuarios", usersMidleware.obtenerUsuarios);
-  app.get("/getAlumnos", usersMidleware.obtenerAlumnos);
-  app.get("/getmodulos", usersMidleware.obtenerModulos);
+  app.get("/getAlumnos", alumnos.obtenerAlumnos);
+  app.get("/getProfesores", profesores.obtenerProfesores);
 
     
-
- // app.post("/votacion", encuesta.votacion);
-  //app.get("/buscarUsuario/", usersMidleware.buscar);
 }
 export { initRoutes}
 

@@ -5,7 +5,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const root = path.resolve(__dirname, '../..');
 
-import { guardarUsuario, buscarUsuario, solicitarUsuarios, solicitarAlumnos,guardarModulo,solicitarModulos} from '../controllers/usersController.js';
+import { guardarUsuario, buscarUsuario, solicitarUsuarios, solicitarAlumnos, solicitarProfesores} from '../controllers/usersController.js';
 
 export async function añadirModulo(req, res) {
     const { nombre, codigo, profesor, descripcion } = req.body;
@@ -117,6 +117,19 @@ export async function obtenerAlumnos(req, res) {
     const result = await solicitarAlumnos();
     if (result) {
         console.log("Alumnos obtenidos");
+        return res.status(200).json({
+            result
+        })
+    }
+    return res.status(417).json({
+        massage: "Error al soliciatar los datos"
+    });
+}
+
+export async function obtenerProfesores(req, res) {
+    const result = await solicitarProfesores();
+    if (result) {
+        console.log("Profesor obtenidos");
         return res.status(200).json({
             result
         })
