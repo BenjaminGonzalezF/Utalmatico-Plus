@@ -3,7 +3,8 @@ import userState from '../../../components/userState';
 import React, { useState } from 'react';
 
 export default function CrearModulo() {
-
+  
+  const [ramo, setRamo] = useState(''); 
   const [correo, setCorreo] = useState('');
   const [modulo,setModulo] = useState('');
   const [clave, setClave] = useState('');
@@ -11,6 +12,44 @@ export default function CrearModulo() {
   const [nombre, setNombre] = useState('');
   const [rut, setRut] = useState('');
   const [carrera, setCarrera] = useState('');
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3001/CrearModulo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ modulo, carrera, ramo }),
+      });
+
+      console.log(response);
+      if (response.ok) {
+        console.log('Modulo matriculado');
+        notificarEnvioExitoso();
+        recargarTabla();
+      } else {
+        console.error('Error ');
+        setError('Error al matricular un alumno'); // Establece el mensaje de error
+      }
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+    }
+  };
+
+ 
+
+  const notificarEnvioExitoso = () => {
+    alert('Modulo creado exitosamente');
+  };
+
+  const recargarTabla = () => {
+    window.location.reload();
+  };
+ 
+
 
   const handleModuloChange = (event) => {
     setModulo(event.target.value);
@@ -35,10 +74,13 @@ export default function CrearModulo() {
     setCarrera(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+ 
 
+  const handleramoChange = (event) => {
+    setRamo(event.target.value);
+  };
+  
+  const listaDocentes = ["selecciona docente","Juan alfajor uwu", "Pepe pudin owo", "juana vainilla chocolate"];
 
   const fondo = "my-div bg-gray-100 flex flex-col justify-center items-center h-screen ";
   const formatoLabel = "px-1 text-sm text-gray-600";
@@ -59,19 +101,42 @@ export default function CrearModulo() {
             <input type="text" id="Modulo" className={formatoInput} value={modulo} placeholder="Nombre del modulo" onChange={handleModuloChange} />
           </div>
 
+          
+
           <div className="m-3 ">
             <label className={formatoLabel}>Docente a Cargo</label>
             <br/>
             <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
-              <option value="Carrera">Juan alfajor uwu</option>
-              <option value="Computación">Pepe pudin owo</option>
-              <option value="Industrial">juana vainilla chocolate</option>
+              {listaDocentes.map((docente) => (
+                <option key={docente} value={docente}>
+                  {docente}
+                </option>
+              ))}
+
+              
             </select>
+          </div>
+
+          <div className="m-2 ">
+          
+          {/* crea lo mismo que arriba, pero para preguntar un resumen del ramo */}
+            <label className={formatoLabel}>Resumen del modulo</label>
+            <textarea type="text" id="Resumen" className={formatoInput} value={ramo} placeholder="Resumen del modulo" onChange={handleramoChange} />
+          
           </div>
 
 
 
-          <button className="mt-6 text-lg font-semibold
+          <button onClick={() => {
+            console.log("modulo: " + modulo);
+            console.log("docente: " + carrera);
+            console.log("resumen: " + ramo);
+
+            
+
+            
+          }}
+          className="mt-6 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black">
             Crear
