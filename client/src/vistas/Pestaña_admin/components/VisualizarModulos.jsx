@@ -6,33 +6,7 @@ import TablaAlumno from './tabla_alumnos/TablaAlumno';
 const VisualizarModulos = () => {
   const [alumnos, setAlumnos] = useState([]);
 
-  useEffect(() => {
-    const solicitarUsuarios = async () => {
-      console.log('Solicitando Modulos');
-      try {
-        const response = await fetch('http://localhost:3001/getModulos', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-
-        if (response.ok) {
-          console.log('Solicitud exitosa');
-          const data = await response.json();
-          console.log('Datos de usuarios:', data.result);
-          
-          setAlumnos(data.result);
-        } else {
-          console.error('Error al obtener usuarios');
-        }
-      } catch (error) {
-        console.error('Error al realizar la solicitud:', error);
-      }
-    };
-
-    solicitarUsuarios();
-  }, []);
+  
 
   const modulos = [
     {

@@ -3,11 +3,11 @@ import * as test from '../midlewares/test.js';
 import * as encuesta from '../midlewares/votacion.js';
 import * as alumnos from '../midlewares/alumno.js';
 import * as profesores from '../midlewares/profesor.js';
-
+import * as modulos from '../midlewares/modulos.js';
 
 function initRoutes(app){
   
-  app.post("/añadirModulo", usersMidleware.añadirModulo);
+
   app.post("/login", usersMidleware.ingreso);
   app.get("/", test.test);    
   app.post("/registro", usersMidleware.registrarUsuario);
@@ -16,7 +16,7 @@ function initRoutes(app){
   app.get("/getusuarios", usersMidleware.obtenerUsuarios);
   app.get("/getAlumnos", alumnos.obtenerAlumnos);
   app.get("/getProfesores", profesores.obtenerProfesores);
-
+  app.post("/CrearModulo",modulos.CrearModulo);
     
 }
 export { initRoutes}

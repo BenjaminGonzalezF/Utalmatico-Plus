@@ -13,6 +13,38 @@ export default function CrearModulo() {
   const [rut, setRut] = useState('');
   const [carrera, setCarrera] = useState('');
 
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3001/CrearModulo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ modulo, carrera, ramo }),
+      });
+
+      console.log(response);
+      if (response.ok) {
+        console.log('Modulo matriculado');
+       
+        
+
+      } else {
+        console.error('Error ');
+        setError('Error al matricular un alumno'); // Establece el mensaje de error
+      }
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+    }
+  };
+
+ 
+
+
+
+
   const handleModuloChange = (event) => {
     setModulo(event.target.value);
   };
@@ -36,9 +68,7 @@ export default function CrearModulo() {
     setCarrera(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+ 
 
   const handleramoChange = (event) => {
     setRamo(event.target.value);
@@ -96,30 +126,9 @@ export default function CrearModulo() {
             console.log("docente: " + carrera);
             console.log("resumen: " + ramo);
 
-            // Crear un objeto con los datos del módulo
-            const moduloData = {
-              modulo: modulo,
-              docente: carrera,
-              resumen: ramo
-            };
+            
 
-            // Enviar los datos a la base de datos utilizando fetch
-            fetch('http://localhost:3001/añadirModulo', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(moduloData)
-            })
-              .then(response => response.json())
-              .then(data => {
-                console.log('Datos del módulo enviados:', data);
-                // Realizar cualquier acción adicional después de enviar los datos
-              })
-              .catch(error => {
-                console.error('Error al enviar los datos del módulo:', error);
-                // Manejar el error de manera adecuada
-              });
+            
           }}
           className="mt-6 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg
