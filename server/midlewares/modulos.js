@@ -1,4 +1,5 @@
-import { registrarModulo } from "../controllers/controladorModulos.js";
+import { registrarModulo, solicitarModulos } from "../controllers/controladorModulos.js";
+import {modulos} from "../models/modulos.js";
 
 async function CrearModulo(req, res) {
     const { modulo, carrera, ramo } = req.body;
@@ -23,4 +24,19 @@ async function CrearModulo(req, res) {
 }
 
 
-export { CrearModulo }; 
+async function obtenerrModulos(req, res) {
+    const result = await solicitarModulos();
+    if (result) {
+        console.log("Modulos obtenidos");
+        return res.status(200).json({
+            result
+        })
+    }
+    return res.status(417).json({
+        massage: "Error al solicitar los datos"
+    });
+}
+
+
+
+export { CrearModulo, obtenerrModulos }; 

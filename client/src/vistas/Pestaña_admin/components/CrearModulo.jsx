@@ -28,9 +28,8 @@ export default function CrearModulo() {
       console.log(response);
       if (response.ok) {
         console.log('Modulo matriculado');
-       
-        
-
+        notificarEnvioExitoso();
+        recargarTabla();
       } else {
         console.error('Error ');
         setError('Error al matricular un alumno'); // Establece el mensaje de error
@@ -42,7 +41,14 @@ export default function CrearModulo() {
 
  
 
+  const notificarEnvioExitoso = () => {
+    alert('Modulo creado exitosamente');
+  };
 
+  const recargarTabla = () => {
+    window.location.reload();
+  };
+ 
 
 
   const handleModuloChange = (event) => {

@@ -6,21 +6,28 @@ async function registrarModulo(nuevomodulo) {
     nombre: nuevomodulo.modulo,
     descripcion: nuevomodulo.ramo,
     docente: nuevomodulo.carrera,
+    profesorid: "0",
+    informacionid: "0",
+    comunicacionid: "0",
+    alumnos: []
+
+
   });
   
   guardarModulo.save();
   console.log("modulo guardado: " + guardarModulo);
 }
 
- async function solicitarProfesores() {
+async function solicitarModulos() {
   try {
-    const profesores = await profesor.find({});
-    console.log(profesores); 
-    return profesores; 
+    const modulosobtenidos = await modulos.find({});
+    console.log(modulosobtenidos); 
+    return modulosobtenidos; 
   } catch (error) {
     console.error('Error al obtener profesores:', error);
     return false;
   }
 }
 
-export { registrarModulo , solicitarProfesores };
+
+export { registrarModulo , solicitarModulos };

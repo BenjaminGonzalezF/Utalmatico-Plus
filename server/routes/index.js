@@ -17,7 +17,7 @@ function initRoutes(app){
   app.get("/getAlumnos", alumnos.obtenerAlumnos);
   app.get("/getProfesores", profesores.obtenerProfesores);
   app.post("/CrearModulo",modulos.CrearModulo);
-    
+  app.get("/getModulos", modulos.obtenerrModulos);
 }
 export { initRoutes}
 
