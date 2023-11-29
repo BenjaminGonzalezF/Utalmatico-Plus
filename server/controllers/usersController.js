@@ -21,6 +21,29 @@ async function solicitarUsuarios() {
     return false
   }
 }
+
+export async function guardarModulo(nuevoModulo) {
+  const modulo = new modulo({
+    nombre: nuevoModulo.nombre,
+    codigo: nuevoModulo.codigo,
+    profesor: nuevoModulo.profesor,
+    descripcion: nuevoModulo.descripcion,
+  });
+  modulo.save();
+  console.log("Modulo guardado: " + modulo);
+}
+
+export async function solicitarModulos() {
+  try {
+    const modulos = await Modulos.find({}); // Consulta todos los documentos en la colección de usuarios
+    console.log(modulos); // Imprime los usuarios en la consola
+    return modulos;
+  } catch (error) {
+    console.error('Error al obtener modulos:', error);
+    return false
+  }
+}
+
 export async function solicitarAlumnos() {
   try {
     const alumnos = []; 

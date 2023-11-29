@@ -11,7 +11,7 @@ export default function MatricularAlumnos() {
   const [rut, setRut] = useState('');
   const [carrera, setCarrera] = useState('');
 
-
+  
 
   const handleCorreoChange = (event) => {
     setCorreo(event.target.value);
@@ -40,6 +40,9 @@ export default function MatricularAlumnos() {
   const fondo = "my-div bg-gray-100 flex flex-col justify-center items-center h-screen ";
   const formatoLabel = "px-1 text-sm text-gray-600";
   const formatoInput = "text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none";
+
+  //crea lista dinamica de carreras
+  const listaCarreras = ["Ingenieria Civil Informatica", "Ingenieria Civil Industrial", "Ingenieria Civil Mecanica", "Ingenieria Civil Electrica", "Ingenieria Civil en Minas", "Ingenieria Civil en Obras Civiles"];
 
   return (
     <div>
@@ -70,9 +73,14 @@ export default function MatricularAlumnos() {
           </div>
           <div className="m-3">
             <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
-              <option value="Carrera">Carrera</option>
-              <option value="Computación">A</option>
-              <option value="Industrial">B</option>
+            
+              {//mostrar todos los elementos de la lista de carreras
+                listaCarreras.map((carrera) => (
+                  <option value={carrera}>{carrera}</option>
+                ))
+
+              }
+
             </select>
           </div>
 
