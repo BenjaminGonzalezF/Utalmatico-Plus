@@ -3,7 +3,7 @@ import perfil from '../assets/imagenes/perfil.jpg'
 import { useNavigate } from 'react-router-dom';
 import GeneracionCartaModulos from './GeneracionCartaModulos';
 import Calendario from './Calendario';
-import './Pestañainicial.css';
+import '../vistas/Pestaña_Inicial/Pestañainicial.css';
 import Mensajes from './Mensajes';
 
 const BotonesPrincipales = () => {
