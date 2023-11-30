@@ -14,8 +14,8 @@ const CartaModulo = ({ nombre, descripcion, correo }) => {
   return (
     <div className={fondo}>
       <form className=" md:p-10 bg-slate-120 shadow-lg rounded-3xl m-4  width: 300px; height: 200px; overflow-y: auto" >
-        <div className="flex items-center justify-center flex-col">
-        <p class="text-2xl font-extrabold text-dark-grey-900">{nombre}</p>
+        <div className="flex items-center justify-center flex-col min-w-[15vw]">
+        <p class="text-xl font-extrabold text-dark-grey-900">{nombre}</p>
             <p className='text-base leading-7 text-dark-grey-300'><span>{descripcion}</span></p>
             <div className=" p-2">
             <p><span><label className={formatoLabel}>{correo}</label></span></p>
