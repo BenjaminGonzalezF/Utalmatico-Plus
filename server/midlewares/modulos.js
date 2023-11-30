@@ -2,7 +2,7 @@ import { registrarModulo, solicitarModulos } from "../controllers/controladorMod
 import {modulos} from "../models/modulos.js";
 
 async function CrearModulo(req, res) {
-    const { modulo, carrera, ramo } = req.body;
+    const { modulo, carrera, ramo,profesorid } = req.body;
    
     if (modulo == null || carrera == null || ramo == null) {
         return res.status(401).json({
@@ -13,7 +13,8 @@ async function CrearModulo(req, res) {
     const modulonuevo = {
         modulo: modulo,
         carrera: carrera,
-        ramo: ramo
+        ramo: ramo,
+        profesorid:  profesorid,
     };
 
 
