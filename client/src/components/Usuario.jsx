@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import perfil from '../assets/imagenes/perfil.jpg'
 import { useNavigate } from 'react-router-dom';
-import GeneracionCartaModulos from './GeneracionCartaModulos';
-import Calendario from './Calendario';
-import './Pestañainicial.css';
-import Mensajes from './Mensajes';
+import '../vistas/Pestaña_Inicial/Pestañainicial.css';
 import userState from './userState';
-import BotonesPrincipales from './BotonesPrincipales';
 
 
 
 const Usuario = () => {
     const navigate = useNavigate();
-    const [showChat, setShowChat] = useState(false);
 
 
   const handlePestañaInicial = () => {

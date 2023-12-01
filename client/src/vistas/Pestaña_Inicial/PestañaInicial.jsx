@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import perfil from '../assets/imagenes/perfil.jpg'
+import perfil from '../../assets/imagenes/perfil.jpg'
 import { useNavigate } from 'react-router-dom';
-import GeneracionCartaModulos from './GeneracionCartaModulos';
-import Calendario from './Calendario';
+import GeneracionCartaModulos from '../../components/GeneracionCartaModulos';
+import Calendario from '../../components/Calendario';
 import './Pestañainicial.css';
-import Mensajes from './Mensajes';
-import BotonesPrincipales from './BotonesPrincipales';
-import Usuario from './Usuario';
-import BotonesFiltrado from './BotonesFiltrado';
-import Pendientes from './Pendientes';
+import Mensajes from '../../components/Mensajes';
+import BotonesPrincipales from '../../components/BotonesPrincipales';
+import Usuario from '../../components/Usuario';
+import BotonesFiltrado from '../../components/BotonesFiltrado';
+import Pendientes from '../../components/Pendientes';
 
 const PestañaInicial = () => {
     const navigate = useNavigate();

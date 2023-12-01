@@ -5,8 +5,38 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const root = path.resolve(__dirname, '../..');
 
-import { guardarUsuario, buscarUsuario, solicitarUsuarios, solicitarAlumnos} from '../controllers/usersController.js';
+import { guardarUsuario, buscarUsuario, solicitarUsuarios, solicitarAlumnos, solicitarProfesores} from '../controllers/usersController.js';
 
+export async function añadirModulo(req, res) {
+    const { nombre, codigo, profesor, descripcion } = req.body;
+    if (nombre == null || codigo == null || profesor == null || descripcion == null) {
+        return res.status(401).json({
+            massage: "Datos faltantes"
+        });
+    }
+    const modulo = {
+        nombre: nombre,
+        codigo: codigo,
+        profesor: profesor,
+        descripcion: descripcion
+    };
+    const result = await guardarModulo(modulo);
+    res.status(200).json({
+        massage: "Datos Enviados a la BD"
+    });
+}
+
+export async function obtenerModulos(req, res) {
+    const result = await solicitarModulos();
+    if (result) {
+        res.status(200).json({
+            result
+        })
+    }
+    return res.status(417).json({
+        massage: "Error al soliciatar los datos"
+    });
+}
 
 export async function ingreso(req, res) {
     const { correo, clave } = req.body;
@@ -87,6 +117,19 @@ export async function obtenerAlumnos(req, res) {
     const result = await solicitarAlumnos();
     if (result) {
         console.log("Alumnos obtenidos");
+        return res.status(200).json({
+            result
+        })
+    }
+    return res.status(417).json({
+        massage: "Error al soliciatar los datos"
+    });
+}
+
+export async function obtenerProfesores(req, res) {
+    const result = await solicitarProfesores();
+    if (result) {
+        console.log("Profesor obtenidos");
         return res.status(200).json({
             result
         })

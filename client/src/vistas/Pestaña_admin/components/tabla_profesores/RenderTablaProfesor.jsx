@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import TablaAlumno from './TablaAlumno';
+import TablaProfesor from './TablaProfesor';
 
-export default function RenderTablaAlumno() {
-  const [alumnos, setAlumnos] = useState([]);
+export default function RenderTablaProfesores() {
+  const [profesores, setprofesores] = useState([]);
 
   useEffect(() => {
     const solicitarUsuarios = async () => {
       console.log('Solicitando usuarios');
       try {
-        const response = await fetch('http://localhost:3001/getAlumnos', {
+        const response = await fetch('http://localhost:3001/getprofesores', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export default function RenderTablaAlumno() {
           const data = await response.json();
           console.log('Datos de usuarios:', data.result);
           
-          setAlumnos(data.result);
+          setprofesores(data.result);
         } else {
           console.error('Error al obtener usuarios');
         }
@@ -47,14 +47,14 @@ export default function RenderTablaAlumno() {
         </thead>
         <tbody className="divide-y divide-gray-100 border-t border-gray-100">
           {
-            alumnos.map((alumno, index) => (
-              <TablaAlumno
+            profesores.map((profesor, index) => (
+              <TablaProfesor
                 key={index}
-                nombre={alumno.nombre}
-                correo={alumno.correo}
+                nombre={profesor.nombre}
+                correo={profesor.correo}
                 estado={"activo"}
-                carrera={alumno.carrera}
-                modulos={"Módulo 1"}
+                carrera={profesor.carrera}
+                ramo={"Ramo 1"}
               />
             ))
           }

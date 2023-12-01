@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import MatricularAlumno from './components/MatricularAlumno';
+import CrearModulo from './components/CrearModulo';
 import RenderTablaAlumno from './components/tabla_alumnos/RenderTablaAlumno';
 import NavBar from '../../components/NavBar';
+import VisualizarModulos from './components/VisualizarModulos';
 
-export default function GestionarAlumnos() {
+
+export default function GestionarModulos() {
 
   return (
     <>
     <NavBar/>
     <div className="flex justify-center bg-gray-100">
-    <MatricularAlumno/>
-    <RenderTablaAlumno/>
+    <CrearModulo/>
+    <VisualizarModulos/>
     </div>
     </>
   );

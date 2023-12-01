@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Login from './vistas/Pestaña_login/Login.jsx'
-import PestañaInicial from './components/PestañaInicial.jsx'
+import PestañaInicial from './vistas/Pestaña_Inicial/PestañaInicial.jsx'
 import Horario from './components/Horario.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AñadirClase from './vistas/vistaModulo/compontes/AñadirClase.jsx'
@@ -18,6 +18,8 @@ import AñadirUnidad from './vistas/vistaModulo/compontes/AñadirUnidad.jsx'
 import AñadirEvaluaciones from './vistas/vistaModulo/compontes/AñadirEvaluaciones.jsx'
 import AsignarEvaluacion from './vistas/vistaModulo/compontes/AsignarEvaluacion.jsx'
 import GestionarAlumnos from './vistas/Pestaña_admin/GestionarAlumnos.jsx'
+import GestionarModulos from './vistas/Pestaña_admin/GestionarModulos.jsx'
+import GestionarProfesor from './vistas/Pestaña_admin/GestionarProfesor.jsx'
 
 const router = createBrowserRouter([
 {
@@ -82,6 +84,14 @@ const router = createBrowserRouter([
 {
   path: '/GestionarAlumnos', 
   element: <GestionarAlumnos/>,
+},
+{
+  path: '/GestionModulos',
+  element: <GestionarModulos/>
+},
+{
+  path: '/GestionProfesor',
+  element: <GestionarProfesor/>
 },
 
 
