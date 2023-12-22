@@ -1,0 +1,75 @@
+.asistencia-popup {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar el popup */
+  }
+  
+  .tabla-asistencia {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabla-asistencia th, .tabla-asistencia td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .empty-cell {
+    width: 100px;
+  }
+  
+  .fecha {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  
+  .circulo-inner {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .verde {
+    background-color: green;
+  }
+  
+  .titulo-rectangulo {
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex; /* Permite que los elementos dentro se posicionen en línea */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+  }
+  
+  .titulo-asistencia {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .cerrar-popup {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .cerrar-icono {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .rojo {
+    background-color: red;
+  }

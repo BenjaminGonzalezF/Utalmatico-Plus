@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import '../../Pestaña_Inicial/Pestañainicial.css';
 import '../../../components/CssNotas.css';
 import NotasPopup from '../../../components/NotasPopup';
-
+import Asistencia from '../../../components/Asistencia';
 
 
 const BotonesLaterales = () => {
     const navigate = useNavigate();
     const [isNotasPopupOpen, setIsNotasPopupOpen] = useState(false);
+    const [isAsistenciaOpen, setIsAsistenciaOpen] = useState(false);
 
     const irAPestañaInicial = () => {
         navigate('/pestañaInicial');
@@ -20,6 +21,10 @@ const BotonesLaterales = () => {
 
     const toggleNotasPopup = () => {
         setIsNotasPopupOpen(!isNotasPopupOpen);
+      };
+
+    const toggleAsistencia = () => {
+        setIsAsistenciaOpen(!isAsistenciaOpen);
       };
 
 
@@ -59,6 +64,7 @@ const BotonesLaterales = () => {
             Avisos
         </button>
         <button
+        onClick={toggleAsistencia}
          className="mt-3 text-lg font-semibold
          bg-gray-800 w-full text-white rounded-lg
          px-6 py-3 block shadow-xl hover:text-white hover:bg-black"
@@ -72,6 +78,7 @@ const BotonesLaterales = () => {
             }}>
             Asistencia
         </button>
+        {isAsistenciaOpen && <Asistencia onClose={toggleAsistencia} />}
         <button
          className="mt-3 text-lg font-semibold
          bg-gray-800 w-full text-white rounded-lg
