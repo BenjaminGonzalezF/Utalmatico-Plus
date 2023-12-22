@@ -1,15 +1,37 @@
 import { usuario } from "../models/users.js";
 
-const guardarUsuario = (nuevoUsuario) => {
-  const user = new usuario({
-    Nombre: nuevoUsuario.nombre,
-    Apellido: nuevoUsuario.apellido,
-    Email: nuevoUsuario.email,
-    Contrasena: nuevoUsuario.contrasena,
-  });
-  user.save();
-  console.log("Usuario guardado: " + user);
-};
+async function guardarUsuario(nuevoUsuario) {
+  try {
+    console.log("Intentando guardar ", nuevoUsuario);
+    const user = new usuario({
+      nombre: nuevoUsuario.nombre,
+      correo: nuevoUsuario.correo,
+      clave: nuevoUsuario.clave,
+      rol: nuevoUsuario.rol
+      
+    });
+    await user.save();
+    console.log("Usuario guardado: " + user);
+    
+  } catch (error) {
+    console.error('Error al guardar el usuario:', error);
+  }
+}
+async function buscarUsuarioGuardado(correo) {
+  try {
+    const usuarioEncontrado = await usuario.findOne({ correo });
+    if (usuarioEncontrado) {
+      console.log('Usuario encontrado:', usuarioEncontrado);
+      return usuarioEncontrado;
+    } else {
+      console.log('No se encontró ningún usuario con ese correo');
+      return null;
+    }
+  } catch (error) {
+    console.error('Ocurrió un error al buscar el usuario:', error);
+    return null;
+  }
+}
 
 async function solicitarUsuarios() {
   try {
@@ -21,6 +43,9 @@ async function solicitarUsuarios() {
     return false
   }
 }
+
+
+
 export async function solicitarAlumnos() {
   try {
     const alumnos = []; 

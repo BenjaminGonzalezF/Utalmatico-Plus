@@ -1,9 +1,9 @@
 import RenderBotonesUnidades from './renders/RenderBotonesUnidades';
 import RenderContenidoUnidades from './renders/RenderContenidoUnidades';
 
-import BotonesModulos from '../../components/BotonesModulos';
+import BotonesModulos from './compontes/BotonesModulos';
 import BotonesProfe from './compontes/BotonesProfe';
-import BotonesAdmin from '../Pestaña_modulosAdmin/BotonesAdmin';
+import BotonesAdmin from './componentes_modulos_admin/BotonesAdmin';
 import './CssPestañaModulo.css';
 import userState from '../../components/userState';
 import React, { useState } from 'react';

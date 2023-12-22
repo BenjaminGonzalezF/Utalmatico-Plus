@@ -11,6 +11,7 @@ export default function MatricularAlumnos() {
   const [rut, setRut] = useState('');
   const [carrera, setCarrera] = useState('');
 
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,7 +21,7 @@ export default function MatricularAlumnos() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ correo, clave, nombre, rut, carrera }),
+        body: JSON.stringify({ correo, clave, nombre, rut, carrera: carrera || "Ingenieria Civíl en Computación" }),
       });
 
       console.log(response);
@@ -71,6 +72,9 @@ export default function MatricularAlumnos() {
   const formatoLabel = "px-1 text-sm text-gray-600";
   const formatoInput = "text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none";
 
+  //crea lista dinamica de carreras
+  const listaCarreras = ["Ingenieria Civil Informatica", "Ingenieria Civil Industrial", "Ingenieria Civil Mecanica", "Ingenieria Civil Electrica", "Ingenieria Civil en Minas", "Ingenieria Civil en Obras Civiles"];
+
   return (
     <div>
       <div className={fondo}>
@@ -100,8 +104,8 @@ export default function MatricularAlumnos() {
           </div>
           <div className="m-3">
             <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
-              <option value="Carrera">Carrera</option>
-              <option value="Ingenieria Civíl en Computación">Ingeniería Civil en Computación</option>
+                <option disabled value="Carrera">Carrera</option>
+                <option value="Ingenieria Civíl en Computación">Ingeniería Civil en Computación</option>
               <option value="Ingenieria Civíl Industrial">Ingeniería Civil Industrial</option>
             </select>
           </div>
