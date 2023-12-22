@@ -23,7 +23,7 @@ const BotonGuardar = () => {
                 marginRight: '0.5vw',
                 marginLeft: '0.5vw',
                 }}>
-                Guardar evaluacion
+                Guardar evaluación
                 </button>
       
       </>
