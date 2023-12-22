@@ -29,7 +29,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          cd frontend
+          cd client
           docker build -t $IMAGE_NAME:latest .
 
       - name: Configure Docker Client
