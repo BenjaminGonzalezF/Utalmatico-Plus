@@ -16,8 +16,10 @@ export default function VistaModulo({nombre}) {
 
   return (
     <>
-        <div class="containeruwu">
 
+        {console.log(userState.nombreModulo)}
+
+        <div class="containeruwu">
         {
             userState.tipoUsuario === "profesor" ? (
               <div className="botonesProfe bg-red-500">

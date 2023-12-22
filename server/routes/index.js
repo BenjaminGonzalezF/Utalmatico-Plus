@@ -4,6 +4,7 @@ import * as encuesta from '../midlewares/votacion.js';
 import * as alumnos from '../midlewares/alumno.js';
 import * as profesores from '../midlewares/profesor.js';
 import * as modulos from '../midlewares/modulos.js';
+import * as unidades from '../midlewares/unidades.js';
 
 function initRoutes(app){
   
@@ -18,6 +19,11 @@ function initRoutes(app){
   app.get("/getProfesores", profesores.obtenerProfesores);
   app.post("/CrearModulo",modulos.CrearModulo);
   app.get("/getModulos", modulos.obtenerrModulos);
+
+  // rutas modulos
+  app.post("/CrearUnidad",unidades.crearUnidad);
+  app.get("/getUnidades", unidades.obtenerUnidades);
+
 }
 export { initRoutes}
 
