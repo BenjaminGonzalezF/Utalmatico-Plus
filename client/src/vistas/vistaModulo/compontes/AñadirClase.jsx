@@ -1,17 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AñadirClase.css'
 import { useNavigate } from 'react-router-dom';
+import userState from '../../../components/userState';
+
 
 function AñadirClase() {
   const [nombre, setNombre] = useState('');
   const [adicional, setAdicional] = useState('');
+  const [unidades2, setModulosget] = useState([]);
 
+  
   const navigate = useNavigate();
     
   const irAVistaModulo = () => {
       navigate('/modulo');
     };
 
+    //usando fecht obtiene las unidades
+    const solicitarModuloss = async () => {
+        console.log('Solicitando Modulos');
+        try {
+          const response = await fetch('http://localhost:3001/getUnidades', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+      
+          if (response.ok) {
+            console.log('Solicitud exitosa');
+            const data = await response.json();
+            console.log('Datos de usuarios:', data.result);
+            
+            return data.result;
+          } else {
+            console.error('Error al obtener usuarios');
+          }
+        } catch (error) {
+          console.error('Error al realizar la solicitud:', error);
+        }
+      };
 
 
   const handleSubmit = (e) => {
@@ -21,6 +49,14 @@ function AñadirClase() {
     console.log('Adicional:', adicional);
   };
 
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      const usuarios = await solicitarModuloss();
+      setModulosget(usuarios);
+    };
+
+    fetchUsuarios();
+  }, []);
 
 
   return (
@@ -62,9 +98,14 @@ function AñadirClase() {
                 </label>
                 <div class="relative">
                     <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                    <option>Unidad 1 - tema x</option>
-                    <option>Unidad 2 - tema y</option>
-                    <option>Unidad 3 - tema z</option>
+                        <option>elige unidad</option>
+                            //usando map con la unidad2 para mostrar las unidades y añade un if para el modulo actual
+                        {unidades2.map((unidad2) => {
+                            if (unidad2.Ramo.includes(userState.nombreModulo)) {
+                                return <option>{unidad2.nombre_unidad}</option>;
+                            }
+                        })}
+
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
