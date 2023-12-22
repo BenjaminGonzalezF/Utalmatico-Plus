@@ -6,7 +6,7 @@ async function registrarModulo(nuevomodulo) {
     nombre: nuevomodulo.modulo,
     descripcion: nuevomodulo.ramo,
     docente: nuevomodulo.carrera,
-    profesorid: "0",
+    profesorid: nuevomodulo.profesorid,
     informacionid: "0",
     comunicacionid: "0",
     alumnos: []
