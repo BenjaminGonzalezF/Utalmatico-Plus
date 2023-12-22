@@ -20,20 +20,20 @@ export default function VistaModulo({nombre}) {
 
         {
             userState.tipoUsuario === "profesor" ? (
-              <div className="botonesProfe bg-red-500">
+              <div className="botonesProfe bg-cabecera">
                 <BotonesProfe />
               </div>
             ) : userState.tipoUsuario === "admin" ? (
-              <div className="botonesProfe bg-red-500">
+              <div className="botonesProfe bg-cabecera">
                 <BotonesAdmin />
               </div>
-            ):<div className="botonesProfe bg-red-500"></div>
+            ):<div className="botonesProfe bg-cabecera"></div>
           }
           
-          <div class="botones     bg-yellow-500          "><BotonesModulos/> </div>
-          <div class="filtros         bg-orange-500         "> <RenderBotonesUnidades/> </div>
-          <div class="Laterales       bg-green-500         ">  </div>
-          <div class="Interior-ramos   overflow-y-auto    bg-teal-500      "> <RenderContenidoUnidades/></div>
+          <div class="botones bg-cabecera flex-col    "><BotonesModulos/> </div>
+          <div class="filtros         bg-fondo-modulo         "> <RenderBotonesUnidades/> </div>
+          <div class="Laterales       bg-fondo         ">  </div>
+          <div class="Interior-ramos   overflow-y-auto   bg-fondo-modulo"> <RenderContenidoUnidades/></div>
           
           
 

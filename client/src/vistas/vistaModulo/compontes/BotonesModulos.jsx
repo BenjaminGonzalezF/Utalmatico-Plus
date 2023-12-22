@@ -27,9 +27,9 @@ const BotonesModulos = () => {
 
     <div>
         <button
-            className="mt-3 text-lg font-semibold
-            bg-gray-800 w-full text-white rounded-lg
-            px-6 py-3 block shadow-xl hover:text-white hover:bg-black" onClick = {irAPestañaInicial}
+            className=" font-semibold bg-green-500 w-full text-white rounded-full  shadow-xl hover:text-black hover:bg-green-400
+            
+            " onClick = {irAPestañaInicial}
             style = {{ 
             fontSize: '15px', 
             width: '180px',   // Cambia el ancho del botón
