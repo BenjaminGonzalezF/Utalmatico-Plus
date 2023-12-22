@@ -7,17 +7,17 @@
     grid-template-areas:
       "botones botones botones botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe"
       "botones botones botones botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe"
-      "Laterales Laterales Laterales filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros"
-      "Laterales Laterales Laterales filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros"
-      "Laterales Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
-      "Laterales Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
-      "Laterales Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
-      "Laterales Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
-      "Laterales Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
-      "Laterales Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
-      "Laterales Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
-      "Laterales Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
-      "Laterales Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos";
+      "Laterales Laterales filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros"
+      "Laterales Laterales filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos";
   }
   
   .botones { grid-area: botones; }
