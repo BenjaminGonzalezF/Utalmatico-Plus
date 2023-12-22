@@ -1,5 +1,7 @@
-# React + Vite
-Hola!
+# Mongo + Express.js + React + Vite + Node
+Sistema web LMS, plataforma de gestión del aprendizaje.
+
+#Despliegue 
 
 Instalar dependencias del servidor con npm install.
 Instalar dependencias del cliente con cd client y luego npm install.

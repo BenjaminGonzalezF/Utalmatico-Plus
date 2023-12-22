@@ -37,11 +37,11 @@ export default function BotonesProfe() {
             bg-gray-800 w-full text-white rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black" 
             style = {{ 
-            fontSize: '2vh', 
-            width: '10vw',   
-            height: '10vh',
-            marginRight: '0.5vw',
-            marginLeft: '0.5vw',
+              fontSize: '2vh', 
+              width: '10vw',   
+              height: '10vh',
+              marginRight: '0.5vw',
+              marginLeft: '0.5vw',
             }}>
             Añadir unidad
         </button>

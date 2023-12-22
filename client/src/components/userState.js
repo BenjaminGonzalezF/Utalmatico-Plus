@@ -4,7 +4,18 @@ const userState = {
     _tipoUsuario: "admin", // Prefix with an underscore to indicate it's a private variable
     _nombreUsuario: null,
     _unidad: false,
+    _ramo_seleccionado: "ninguno",
   
+
+    get ramo_seleccionado() {
+      return this._ramo_seleccionado;
+    }
+
+    ,
+    set ramo_seleccionado(value) {
+      this._ramo_seleccionado = value;
+    },
+
     get tipoUsuario() {
       return this._tipoUsuario;
     },
