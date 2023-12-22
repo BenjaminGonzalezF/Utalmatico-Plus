@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Pestañainicial.css';
-import './CssNotas.css';
-import NotasPopup from './NotasPopup';
+import '../../Pestaña_Inicial/Pestañainicial.css';
+import '../../../components/CssNotas.css';
+import NotasPopup from '../../../components/NotasPopup';
 
 
 const BotonesModulos = () => {
@@ -13,8 +13,8 @@ const BotonesModulos = () => {
         navigate('/pestañaInicial');
       };
 
-      const irAEvaluacion = () => {
-        navigate('/añadirEvaluaciones');
+      const irInformacion = () => {
+        /* navigate('/añadirEvaluaciones'); */
       };
 
     const toggleNotasPopup = () => {
@@ -27,9 +27,9 @@ const BotonesModulos = () => {
 
     <div>
         <button
-            className="mt-3 text-lg font-semibold
-            bg-gray-800 w-full text-white rounded-lg
-            px-6 py-3 block shadow-xl hover:text-white hover:bg-black" onClick = {irAPestañaInicial}
+            className=" font-semibold bg-green-500 w-full text-white rounded-full  shadow-xl hover:text-black hover:bg-green-400
+            
+            " onClick = {irAPestañaInicial}
             style = {{ 
             fontSize: '15px', 
             width: '180px',   // Cambia el ancho del botón
@@ -98,7 +98,7 @@ const BotonesModulos = () => {
             Comunicación docente
         </button>
         <button
-            onClick={irAEvaluacion}
+            onClick={irInformacion}
             className="mt-3 text-lg font-semibold
             bg-gray-800 w-full text-white rounded-lg
             px-6 py-3 block shadow-xl hover:text-white hover:bg-black"

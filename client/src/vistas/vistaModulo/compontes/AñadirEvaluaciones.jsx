@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './AñadirEvaluaciones.css'
-import AsignarNombre from '../../Evaluaciones/AsignarNombre';
+import AsignarNombre from '../../Pestaña_evaluaciones/AsignarNombre';
 import { useNavigate } from 'react-router-dom';
-import GeneracionCartaPregunta from '../../Evaluaciones/GeneracionCartaPregunta';
-import Tiempo from '../../Evaluaciones/Tiempo';
-import BotonRegresar from '../../Evaluaciones/BotonRegresar';
-import BotonGuardar from '../../Evaluaciones/BotonGuardar';
+import GeneracionCartaPregunta from '../../Pestaña_evaluaciones/GeneracionCartaPregunta';
+import Tiempo from '../../Pestaña_evaluaciones/Tiempo';
+import BotonRegresar from '../../Pestaña_evaluaciones/BotonRegresar';
+import BotonGuardar from '../../Pestaña_evaluaciones/BotonGuardar';
 import userState from '../../../components/userState';
 
 function AñadirEvaluaciones() {

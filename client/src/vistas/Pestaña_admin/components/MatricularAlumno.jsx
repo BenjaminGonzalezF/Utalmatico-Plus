@@ -21,7 +21,7 @@ export default function MatricularAlumnos() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ correo, clave, nombre, rut, carrera }),
+        body: JSON.stringify({ correo, clave, nombre, rut, carrera: carrera || "Ingenieria Civíl en Computación" }),
       });
 
       console.log(response);
@@ -104,14 +104,9 @@ export default function MatricularAlumnos() {
           </div>
           <div className="m-3">
             <select value={carrera} onChange={handleCarreraChange} className="bg-transparent">
-            
-              {//mostrar todos los elementos de la lista de carreras
-                listaCarreras.map((carrera) => (
-                  <option value={carrera}>{carrera}</option>
-                ))
-
-              }
-
+                <option disabled value="Carrera">Carrera</option>
+                <option value="Ingenieria Civíl en Computación">Ingeniería Civil en Computación</option>
+              <option value="Ingenieria Civíl Industrial">Ingeniería Civil Industrial</option>
             </select>
           </div>
 
