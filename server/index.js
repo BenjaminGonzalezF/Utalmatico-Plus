@@ -19,7 +19,7 @@ initRoutes(app)
 app.listen(PORT, (err) => {
   if (err) console.log(err);
   console.log(
-    `Server is listening at: ${PORT} - Click Here => http://localhost:${PORT}`
+    `Server is listening at: ${PORT} - Click Here => http://34.28.148.224:${PORT}`
   );
 });
 

@@ -23,7 +23,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/login', {
+      const response = await fetch('http://34.28.148.224:3001/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ export default function RenderTablaProfesores() {
     const solicitarUsuarios = async () => {
       console.log('Solicitando usuarios');
       try {
-        const response = await fetch('http://localhost:3001/getprofesores', {
+        const response = await fetch('http://34.28.148.224:3001/getprofesores', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

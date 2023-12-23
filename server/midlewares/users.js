@@ -68,15 +68,15 @@ export async function ingreso(req, res) {
 function redirigirUsuario(rol, res) {
 
     if (rol === "Administrador") {
-        res.redirect('http://localhost:3000/inicio');
+        res.redirect('http://34.28.148.224:3000/inicio');
     } else if (rol === "Profesor") {
         console.log("Enviando a calendario");
-        //res.redirect('http://localhost:3000/calendario');
+        //res.redirect('http://34.28.148.224:3000/calendario');
         const filePath = path.join(root, 'client/src/components', 'VistaModulo.jsx');
         res.sendFile(filePath);
         
     } else if (rol === "Alumno") {
-        res.redirect('http://localhost:3000/pestañaInicial');
+        res.redirect('http://34.28.148.224:3000/pestañaInicial');
 
     } else {
         res.status(404).send('Rol no válido');
