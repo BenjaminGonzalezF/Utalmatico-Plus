@@ -17,4 +17,17 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
+
+  .notas-table {
+    border: 2px solid black; /* Cambia el color del borde a negro */
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+  }
+  
+  .notas-table th, .notas-table td {
+    border: 1px solid black; /* Cambia el color del borde de las celdas a negro */
+    padding: 8px;
+    text-align: left;
+  }
+  
   
