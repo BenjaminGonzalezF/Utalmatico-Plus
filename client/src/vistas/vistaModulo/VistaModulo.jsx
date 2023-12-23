@@ -12,7 +12,7 @@ export default function VistaModulo({nombre}) {
 
   //funciones para manejar los pop-ups
   
-
+  const [clases, setClases] = useState([]);
 
 
   return (
@@ -34,9 +34,9 @@ export default function VistaModulo({nombre}) {
           }
           
           <div class="botones bg-cabecera flex-col    "><BotonesModulos/> </div>
-          <div class="filtros         bg-fondo-modulo         "> <RenderBotonesUnidades/> </div>
+          <div class="filtros         bg-fondo-modulo         "> <RenderBotonesUnidades setClases={setClases}/> </div>
           <div class="Laterales       bg-fondo         "> <BotonesLaterales/> </div>
-          <div class="Interior-ramos   overflow-y-auto   bg-fondo-modulo"> <RenderContenidoUnidades/></div>
+          <div class="Interior-ramos   overflow-y-auto   bg-fondo-modulo"> <RenderContenidoUnidades clases={clases}/></div>
           
           
 

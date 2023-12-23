@@ -1,4 +1,5 @@
 
+
 // Create a JavaScript object to encapsulate your variables
 const userState = {
     _tipoUsuario: "admin", // Prefix with an underscore to indicate it's a private variable
@@ -6,6 +7,10 @@ const userState = {
     _unidad: false,
     _ramo_seleccionado: "ninguno",
   
+    //cosas que defini en otra parte pero siempre olvido donde
+    //userState.nombreModulo  = nombre del modulo
+    //userState.guardarUnidad = nombre unidad
+
 
     get ramo_seleccionado() {
       return this._ramo_seleccionado;
