@@ -14,7 +14,7 @@ export default function MatricularProfesor() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/matricularProfesor', {
+      const response = await fetch('http://34.28.148.224:3001/matricularProfesor', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

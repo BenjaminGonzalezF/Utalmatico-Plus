@@ -23,3 +23,7 @@ server/.env
 *.njsproj
 *.sln
 *.sw?
+
+client/client.rar
+
+backend.rar

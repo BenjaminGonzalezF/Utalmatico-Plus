@@ -12,7 +12,7 @@ const VisualizarModulos = () => {
   const solicitarModuloss = async () => {
     console.log('Solicitando Modulos');
     try {
-      const response = await fetch('http://localhost:3001/getModulos', {
+      const response = await fetch('http://34.28.148.224:3001/getModulos', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
