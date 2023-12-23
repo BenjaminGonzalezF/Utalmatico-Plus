@@ -1,0 +1,32 @@
+.containeruwu {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    width: 100vw; height: 100vh;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "botones botones botones botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe"
+      "botones botones botones botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe botonesProfe"
+      "Laterales Laterales filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros"
+      "Laterales Laterales filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros filtros"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos"
+      "Laterales Laterales Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos Interior-ramos";
+  }
+  
+  .botones { grid-area: botones; }
+
+  .botonesProfe {grid-area: botonesProfe;}
+  
+  .filtros { grid-area: filtros; }
+  
+  .Laterales { grid-area: Laterales; }
+  
+  .Interior-ramos { grid-area: Interior-ramos; }
+  

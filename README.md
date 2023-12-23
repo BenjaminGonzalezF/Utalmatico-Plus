@@ -1,8 +1,18 @@
-# React + Vite
+# Mongo + Express.js + React + Vite + Node
+Sistema web LMS, plataforma de gestión del aprendizaje.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#Despliegue 
 
-Currently, two official plugins are available:
+Instalar dependencias del servidor con npm install.
+Instalar dependencias del cliente con cd client y luego npm install.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Para ejecutar el servidor del cliente: npm run client
+
+En otra consola de comandos iniciar el servidor backend.
+
+Para ejecutar el servidor backend: npm run server
+
+
+
+
