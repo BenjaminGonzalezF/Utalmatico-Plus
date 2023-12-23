@@ -16,9 +16,9 @@ async function registrarClases(nuevoClases) {
 
  async function solicitarClases() {
   try {
-    const clases = await Clases.find({});
-    console.log(clases); 
-    return clases; 
+    const Clases = await clases.find({});
+    console.log(Clases); 
+    return Clases; 
   } catch (error) {
     console.error('Error al obtener clases:', error);
     return false;

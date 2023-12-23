@@ -27,7 +27,7 @@ async function crearClase(req, res) {
 
 
 async function obtenerClases(req, res) {
-    const result = await solicitarclases();
+    const result = await solicitarClases();
     if (result) {
         console.log("Clases obtenidos");
         return res.status(200).json({

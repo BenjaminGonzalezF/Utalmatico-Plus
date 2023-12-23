@@ -37,6 +37,8 @@ function AñadirUnidad() {
     } catch (error) {
       console.error('Error al realizar la solicitud:', error);
     }
+
+    navigate('/modulo');
   };
 
 

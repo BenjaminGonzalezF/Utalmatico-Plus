@@ -12,8 +12,43 @@ function RenderBotonesUnidades() {
   ];
 
   const [unidades2, setModulosget] = useState([]);
+  const [clases, setClases] = useState([]);
 
+
+
+  const asignarUnidades = async (nombre) => {
+    userState.guardarUnidad = nombre;
+    const usuario3s = await solicitarClasess();
+    console.log(usuario3s);
+    setClases(usuario3s);
+    userState.listaclases = usuario3s;
+  };
   
+
+  const solicitarClasess = async () => {
+    console.log('Solicitando unidades');
+    try {
+      const response = await fetch('http://localhost:3001/getClases', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        console.log('Solicitud exitosa');
+        const data = await response.json();
+        console.log('Datos de usuarios:', data.result);
+        
+        return data.result;
+      } else {
+        console.error('Error al obtener clases');
+      }
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+    }
+  };
+
 
   const solicitarModuloss = async () => {
     console.log('Solicitando Modulos');
@@ -58,14 +93,12 @@ function RenderBotonesUnidades() {
             {unidades2.map((unidades, index) => {
           if (unidades.Ramo === userState.nombreModulo) {
             return (
-              <BotonUnidad
-                key={index}  // Asegúrate de proporcionar una clave única para cada elemento en el mapeo
-                nombreUnidad={unidades.nombre_unidad}
-              />
+              <button onClick={asignarUnidades} className = "m-2 mx-2   mt-3 text-lg font-semibold bg-white w-full text-slate-700 rounded-t px-6 py-3 block shadow-xl hover:text-black hover:bg-fondo "  >
+                {unidades.nombre_unidad}
+                </button>
             );
           }
-          // Si no se cumple la condición, puedes devolver `null` o un componente vacío.
-          // Aquí, simplemente estamos devolviendo `null` para omitir el elemento.
+
           return null;  
         })}
         </div> 

@@ -1,4 +1,6 @@
+import userState from "../../../components/userState";
 import ElementoClases from "../compontes/ElementoClases";
+import { useEffect,useState } from 'react';
 
 export default function RenderContenidoUnidades() {
   const clases = [
@@ -8,6 +10,14 @@ export default function RenderContenidoUnidades() {
     { nombre: 'Clase 4'},
     { nombre: 'Clase 5'},
   ];
+
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      console.log(userState.listaclases);
+    };
+
+    fetchUsuarios();
+  }, []);
 
 
 
