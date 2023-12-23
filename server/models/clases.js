@@ -17,6 +17,17 @@ var Clases = new mongoose.Schema(
             type: String,
             required: true,
         },
+        
+        Evaluaciones:{
+            type: Array,
+            required: false,
+        },
+        documentos:
+        {
+            type: Array,
+            required: false,
+        },
+
 
     },
     {

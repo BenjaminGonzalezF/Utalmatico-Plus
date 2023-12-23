@@ -27,7 +27,7 @@ const BotonesModulos = () => {
 
     <div>
         <button
-            className=" font-semibold bg-green-500 w-full text-white rounded-full  shadow-xl hover:text-black hover:bg-green-400
+            className=" font-semibold bg-cyan-500 w-full text-white rounded-full  shadow-xl hover:text-black hover:bg-green-400
             
             " onClick = {irAPestañaInicial}
             style={{

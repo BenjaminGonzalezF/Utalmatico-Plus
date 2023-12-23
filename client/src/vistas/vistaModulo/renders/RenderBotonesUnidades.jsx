@@ -15,6 +15,7 @@ function RenderBotonesUnidades({ setClases }) {
 
 
   const asignarUnidades = async (unidad) => {
+    console.log("ñalsdkfñlsadkfñlskadflñk")
     userState.guardarUnidad = unidad;  // Establecer el valor de userState.guardarUnidad
     const usuario3s = await solicitarClasess();
     console.log(usuario3s);

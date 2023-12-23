@@ -28,6 +28,8 @@ function initRoutes(app){
   // rutas clases
   app.post("/CrearClase",clases.crearClase);
   app.get("/getClases", clases.obtenerClases);
+  app.post("/agregarEvaluaciones", clases.agregarEvaluaciones);
+  app.post("/agregardocumentos", clases.agregardocumentos);
 
 }
 export { initRoutes}

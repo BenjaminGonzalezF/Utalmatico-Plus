@@ -27,8 +27,8 @@ export default function RenderContenidoUnidades({ clases = [], setClases }) {
               return (
                 <ElementoClases
                   key={index}
-                  nombreClase={clase.Nombre_clase}
-                  setClases={setClases}
+                  nombreClase={clase}
+                 
                 />
               );
             }

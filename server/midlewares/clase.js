@@ -1,5 +1,6 @@
 
 import  { registrarClases, solicitarClases } from "../controllers/controladorClases.js";
+import { clases } from "../models/clases.js";
 
 async function crearClase(req, res) {
     const { Nombre_ramo, Nombre_clase, Desarrollo_clase, Unidad_a_Guadar } = req.body;
@@ -24,6 +25,82 @@ async function crearClase(req, res) {
     });
 }
 
+async function agregarEvaluaciones(req, res) {
+    const { Nombre_clase, datosAñadir } = req.body; 
+    if (!Nombre_clase || !datosAñadir) {
+        return res.status(400).json({
+            message: "Datos faltantes para agregar a la matriz."
+        });
+    }
+
+    try {
+        // Buscar el documento por ID.
+        const documento = await clases.findOne({ Nombre_clase: Nombre_clase });
+        console.log("LETSS GOOOOOOOOOOOO")
+        console.log(documento);
+        if (!documento) {
+            return res.status(404).json({
+                message: "Documento no encontrado."
+            });
+        }
+
+        // Añadir datos a la matriz.
+        documento.Evaluaciones.push(datosAñadir); // Suponiendo que datosAñadir es un array o un valor que deseas añadir a la matriz.
+
+        // Guardar el documento modificado.
+        await documento.save();
+
+        return res.status(200).json({
+            message: "Datos agregados correctamente."
+        });
+
+    } catch (error) {
+        console.error("Error al agregar datos a la matriz:", error);
+        return res.status(500).json({
+            message: "Error interno del servidor."
+        });
+    }
+}
+
+
+async function agregardocumentos(req, res) {
+    const { Nombre_clase, datosAñadir } = req.body; 
+    if (!Nombre_clase || !datosAñadir) {
+        return res.status(400).json({
+            message: "Datos faltantes para agregar a la matriz."
+        });
+    }
+
+    try {
+        // Buscar el documento por ID.
+        console.log("LETSS antes GOOOOOOOOOOOO")
+        const documento = await clases.findOne({ Nombre_clase: Nombre_clase });
+        console.log("LETSS GOOOOOOOOOOOO")
+        console.log(documento);
+        if (!documento) {
+            return res.status(404).json({
+                message: "Documento no encontrado."
+            });
+        }
+
+        // Añadir datos a la matriz.
+        documento.documentos.push(datosAñadir); // Suponiendo que datosAñadir es un array o un valor que deseas añadir a la matriz.
+
+        // Guardar el documento modificado.
+        await documento.save();
+
+        return res.status(200).json({
+            message: "Datos agregados correctamente."
+        });
+
+    } catch (error) {
+        console.error("Error al agregar datos a la matriz:", error);
+        return res.status(500).json({
+            message: "Error interno del servidor."
+        });
+    }
+}
+
 
 
 async function obtenerClases(req, res) {
@@ -39,4 +116,4 @@ async function obtenerClases(req, res) {
     });
 }
 
-export { crearClase, obtenerClases };
+export { crearClase, obtenerClases, agregarEvaluaciones, agregardocumentos };

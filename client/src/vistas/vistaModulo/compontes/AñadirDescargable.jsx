@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './AñadirDescargable.css'
 import { useNavigate } from 'react-router-dom';
+import userState from '../../../components/userState';
 
 function AñadirDescargable() {
   const [nombre, setNombre] = useState('');
   const [adicional, setAdicional] = useState('');
+  const [clases, setModulosget] = useState([]);
+
+  
+  const [nombreEvaluacion, setNombreEvaluacion] = useState('');
+  const [nombreClase, setNombreClase] = useState('');
+  const [link, setlink] = useState('');
+
 
   const navigate = useNavigate();
     
@@ -13,13 +21,77 @@ function AñadirDescargable() {
     };
 
 
+    
+    const GuardarEvaluacion = async (event) => {
+        event.preventDefault();
+        try {
+            console.log(nombre);
+            console.log(nombreEvaluacion);
+            console.log(link);
+          const response = await fetch('http://localhost:3001/agregardocumentos', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+           
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Realiza alguna acción con los datos del formulario, por ejemplo, enviarlos al servidor
-    console.log('Nombre:', nombre);
-    console.log('Adicional:', adicional);
-  };
+            body: JSON.stringify({ 
+                Nombre_clase: nombre, 
+                datosAñadir: [nombreEvaluacion, link]
+              }),
+          });
+    
+          console.log(response);
+          if (response.ok) {
+            console.log('PRUEBAAAAAAAAAAAAAAA JAAAAJAJA');
+      
+          } else {
+            console.error('Error ');
+            setError('Error al matricular un alumno'); // Establece el mensaje de error
+          }
+        } catch (error) {
+          console.error('Error al realizar la solicitud:', error);
+        }
+    
+        navigate('/modulo');
+      };
+  
+
+
+
+    const solicitarClasess = async () => {
+        console.log('Solicitando Modulos');
+        try {
+          const response = await fetch('http://localhost:3001/getClases', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+      
+          if (response.ok) {
+            console.log('Solicitud exitosa');
+            const data = await response.json();
+            console.log('Datos de usuarios:', data.result);
+            
+            return data.result;
+          } else {
+            console.error('Error al obtener usuarios');
+          }
+        } catch (error) {
+          console.error('Error al realizar la solicitud:', error);
+        }
+      };
+    
+
+      useEffect(() => {
+        const fetchUsuarios = async () => {
+          const usuarios = await solicitarClasess();
+          setModulosget(usuarios);
+        };
+    
+        fetchUsuarios();
+      }, []);
 
 
 
@@ -35,8 +107,14 @@ function AñadirDescargable() {
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sñlfkdsñldk">
                     Nombre elemento a añadir
                 </label>
-                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Presentación ppt - tema x" autoComplete="off"/>
-                
+                <input 
+                    className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                    type="text" 
+                    value={nombreEvaluacion} 
+                    onChange={(e) => setNombreEvaluacion(e.target.value)}
+                    placeholder="Descargable - ejemplo" 
+                    autoComplete="off"
+                />
                 </div>
                 
             </div>
@@ -46,31 +124,19 @@ function AñadirDescargable() {
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sñlfkdsñldk">
                     Link de elemento
                 </label>
-                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="enlace google drive u otro..." autoComplete="off"/>
-                
+                <input 
+                    className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
+                    type="text" 
+                    value={link} 
+                    onChange={(e) => setlink(e.target.value)}
+                    placeholder="Link del elemento - google drive" 
+                    autoComplete="off"
+                />
                 </div>
                 
             </div>
 
-            <div class="flex flex-wrap -mx-3 mb-6">
- 
-                <div class="w-full px-3 ">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-                    Unidad a añadir
-                </label>
-                <div class="relative">
-                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                    <option>Unidad 1 - tema x</option>
-                    <option>Unidad 2 - tema y</option>
-                    <option>Unidad 3 - tema z</option>
-                    </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                    </div>
-                </div>
-                </div>
-                
-            </div>
+   
 
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full px-3 ">
@@ -78,16 +144,25 @@ function AñadirDescargable() {
                     Clase a añadir
                 </label>
                 <div class="relative">
-                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-                    <option>Clase 1 - tema x</option>
-                    <option>Clase 2 - tema y</option>
-                    <option>Clase 3 - tema z</option>
-                    <option>Clase 4 - tema z</option>
-                    </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                    </div>
-                </div>
+                <select 
+                    className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+                    id="grid-state"
+                    value={nombre} 
+                    onChange={(e) => setNombre(e.target.value)} 
+                >
+                    <option value="">Seleccione una clase</option>
+                    {clases.map((clase, index) => {
+                        if (clase.Nombre_ramo === userState.nombreModulo ) {
+                            return (
+                                <option key={index} value={clase.Nombre_clase}>
+                                    {clase.Nombre_clase}
+                                </option>
+                            );
+                        } 
+                        return null; // Devuelve null si no cumple la condición para evitar errores
+                    })}
+                </select>
+                                </div>
                 </div>
 
  
@@ -102,7 +177,7 @@ function AñadirDescargable() {
 
         <div class="aceptar flex  bg-orange-500  ">
             <button
-                onClick={irAVistaModulo}
+                onClick={GuardarEvaluacion}
                 className="mt-3 text-lg font-semibold
                 bg-gray-800 w-full text-white rounded-lg
                 px-6 py-3 block shadow-xl hover:text-white hover:bg-black" 
